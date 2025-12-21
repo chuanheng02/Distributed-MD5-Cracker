@@ -1,0 +1,12 @@
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Server started. Assigned First-Char Range: 47 to 94, Threads: 10
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 0 started. Range: 47 to 51
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 1 started. Range: 52 to 56
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 2 started. Range: 57 to 61
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 3 started. Range: 62 to 66
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 4 started. Range: 67 to 71
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 5 started. Range: 72 to 76
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 6 started. Range: 77 to 81
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 7 started. Range: 82 to 86
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 8 started. Range: 87 to 90
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Thread 9 started. Range: 91 to 94
+Sun Dec 21 17:11:41 GMT+08:00 2025 : Stop command received. All threads stopped.
