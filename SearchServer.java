@@ -10,12 +10,14 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
     // Counter for the Live ETA
     private final AtomicLong totalChecked = new AtomicLong(0);
     
-    // Flag to stop threads if found
+    // Flag to stop threads if password is found
     private volatile boolean keepSearching = true;
 
     protected SearchServer() throws RemoteException {
         super();
     }
+
+    // --- RMI Interface Methods ---
 
     @Override
     public long getProgress() throws RemoteException {
@@ -29,17 +31,12 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
 
     @Override
     public String search(String targetHash, long start, long end, int numThreads, int length) throws RemoteException {
-        System.out.println("Starting search for length: " + length + ", Range: " + start + "-" + end);
+        System.out.println("Starting search | Length: " + length + " | Range: " + start + " - " + end);
         
         // Reset counter and flag for new search
         totalChecked.set(0);
         keepSearching = true;
 
-        // Create a thread array (simplified logic for clarity)
-        // In a real scenario, you might split the 'start-end' range further among threads.
-        // Here, we just run the loop in the main thread for simplicity, 
-        // OR you can spawn threads here if you have complex logic.
-        
         // --- BRUTE FORCE LOGIC ---
         // We assume 'start' and 'end' refer to the ASCII value of the FIRST character.
         
@@ -56,7 +53,7 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
                 totalChecked.incrementAndGet();
                 if (md5(sb.toString()).equals(targetHash)) return sb.toString();
             } else {
-                // If length > 1, recursive generation
+                // If length > 1, go deeper
                 String result = recursiveCheck(sb, length - 1, targetHash);
                 if (result != null) return result;
             }
@@ -65,7 +62,9 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         return null;
     }
 
-    // Helper method to generate remaining characters
+    // --- Helper Methods ---
+
+    // Recursive helper to generate remaining characters
     private String recursiveCheck(StringBuilder current, int charsLeft, String targetHash) {
         if (!keepSearching) return null;
 
@@ -74,7 +73,8 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
             String candidate = current.toString();
             
             // --- UPDATE COUNTER FOR ETA ---
-            // We update every check. (For extreme speed, update every 1000 checks)
+            // We update every check. 
+            // (For extreme speed optimization, you could update every 1000 checks, but this is safer for now)
             totalChecked.incrementAndGet(); 
             // ------------------------------
 
@@ -96,7 +96,7 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         return null;
     }
 
-    // MD5 Helper
+    // MD5 Hasher
     private String md5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -111,16 +111,28 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         }
     }
 
+    // --- Main Method (Updated) ---
+
     public static void main(String[] args) {
         try {
-            // Start Registry
+            // 1. Start Registry (if not already running)
             try { LocateRegistry.createRegistry(1099); } catch (Exception e) {}
             
-            String serverName = "server_1"; // Change to 'server_2' for the second PC
+            // 2. Determine Server Name
+            String serverName = "server_1"; // Default
+            
+            if (args.length > 0) {
+                serverName = args[0]; // Use the name you typed!
+            }
+
+            // 3. Bind to Registry
+            System.setProperty("java.rmi.server.hostname", System.getProperty("java.rmi.server.hostname"));
             Naming.rebind(serverName, new SearchServer());
             
             System.out.println("Server [" + serverName + "] is ready.");
+            
         } catch (Exception e) {
+            System.out.println("Server Error: " + e.getMessage());
             e.printStackTrace();
         }
     }
