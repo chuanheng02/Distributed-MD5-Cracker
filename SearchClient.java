@@ -11,10 +11,10 @@ public class SearchClient {
         try {
             // --- USER CONFIGURATION (EDIT THESE IPS) ---
             // IP address of PC 2 (Server 1 - Your Friend's IP)
-            String SERVER_1_IP = "172.20.10.3"; 
+            String SERVER_1_IP = "172.20.10.2"; 
             
             // IP address of Server 2 (If using 1 server, ignore this)
-            String SERVER_2_IP = "192.168.0.12"; 
+            String SERVER_2_IP = "172.20.10.3"; 
             // -------------------------------------------
 
             System.out.println("--- Distributed Password Cracker Client ---");
