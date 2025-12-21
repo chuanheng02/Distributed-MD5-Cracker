@@ -26,11 +26,11 @@ public class BruteForceThread extends Thread {
     private SearchServer server; 
     private volatile boolean keepRunning = true;
 
-    // --- SPEED FIX: Larger Batch Size ---
-    // Only update progress every 500,000 attempts to stop lag
+    // --- SPEED CONFIGURATION ---
+    // Update progress only once every 1,000,000 checks
     private long localCount = 0; 
-    private static final long BATCH_SIZE = 500000; 
-    // ------------------------------------
+    private static final long BATCH_SIZE = 1000000; 
+    // ---------------------------
 
     // ThreadLocal MD5 (Reuse MD5 instance per thread)
     private static final ThreadLocal<MessageDigest> THREAD_LOCAL_MD5 = ThreadLocal.withInitial(() -> {
@@ -59,7 +59,6 @@ public class BruteForceThread extends Thread {
         // 1. Iterate through Assigned First Characters (Prefix)
         for (long firstCharIdx = startCharIndex; firstCharIdx <= endCharIndex && keepRunning; firstCharIdx++) {
             
-            // Safety: Should not happen if partitioning is right, but prevents crash
             if (firstCharIdx >= CHARSET_SIZE) break;
 
             candidateBytes[0] = (byte) CHARSET[(int)firstCharIdx];
@@ -72,7 +71,7 @@ public class BruteForceThread extends Thread {
             }
         }
         
-        // Final flush of progress count
+        // Final flush of progress count (in case it ended with < 1,000,000 checks pending)
         if (localCount > 0) {
             server.addProgress(localCount);
         }
@@ -88,12 +87,11 @@ public class BruteForceThread extends Thread {
             return;
         }
 
-        // Recursive Step: Try all 95 characters for this position
+        // Recursive Step
         for (int i = 0; i < CHARSET_SIZE; i++) {
             candidateBytes[index] = (byte) CHARSET[i];
             recursiveSearch(index + 1, candidateBytes, md, startTime);
             
-            // Check stop flag frequently
             if (!keepRunning) return;
         }
     }
@@ -103,7 +101,6 @@ public class BruteForceThread extends Thread {
         
         if (Arrays.equals(md.digest(), targetBytes)) {
             long duration = System.currentTimeMillis() - startTime;
-            // Create string safely
             String password = new String(candidateBytes, StandardCharsets.UTF_8);
             String res = String.format("Password: %s, ThreadID: %d, Time: %dms", password, this.threadID, duration);
             
@@ -123,7 +120,6 @@ public class BruteForceThread extends Thread {
         this.keepRunning = false;
     }
 
-    // Helper to convert Hash String to Bytes
     private static byte[] hexStringToByteArray(String s) {
         int len = s.length();
         byte[] data = new byte[len / 2];
