@@ -1,30 +1,31 @@
 import java.rmi.Naming;
 import java.util.Scanner;
-import java.time.LocalDateTime; // For Date/Time
-import java.time.format.DateTimeFormatter; // For Formatting
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class SearchClient {
-    // Partitioning based on First Character (ASCII 32-126 is roughly 95 chars)
+    // Total partitions (based on ASCII 32-126 = 95 characters)
     private static final int TOTAL_PARTITIONS = 95; 
-
-    // Date Formatter (e.g., "2025-12-21 10:30:00")
+    
+    // Formatter for timestamps
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-    // Track which server found the password
-    private static volatile int winningServer = 0;
+    
+    // Flag to stop the ETA loop when found
+    private static volatile boolean finished = false;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            // --- USER CONFIGURATION ---
+            // --- CONFIGURATION ---
+            // UPDATE THESE IPS TO MATCH YOUR REAL SETUP
             String SERVER_1_IP = "172.20.10.2"; 
             String SERVER_2_IP = "172.20.10.3"; 
-            // --------------------------
+            // ---------------------
 
             System.out.println("--- Distributed Password Cracker Client ---");
             System.out.print("Enter MD5 Hash: ");
-            String hash = scanner.nextLine().trim(); // Added .trim() to fix "space" bugs
+            String hash = scanner.nextLine().trim();
             
             System.out.print("Enter Password Length: ");
             int pwdLen = scanner.nextInt();
@@ -35,47 +36,53 @@ public class SearchClient {
             System.out.print("Enter Number of Servers (1 or 2): ");
             int numServers = scanner.nextInt();
 
-            // 1. Connect to Servers
-            System.out.println("Connecting to Server 1 at " + SERVER_1_IP + "...");
+            // 1. Connect
+            System.out.println("Connecting to Server 1...");
             SearchInterface server1 = (SearchInterface) Naming.lookup("rmi://" + SERVER_1_IP + "/server_1");
             
             SearchInterface server2 = null;
             if (numServers == 2) {
-                System.out.println("Connecting to Server 2 at " + SERVER_2_IP + "...");
+                System.out.println("Connecting to Server 2...");
                 server2 = (SearchInterface) Naming.lookup("rmi://" + SERVER_2_IP + "/server_2");
             }
 
-            // 2. Partition the Work
+            // 2. Setup Partitions
             long rangePerServer = TOTAL_PARTITIONS / numServers;
             
-            // Server 1 Range
-            long s1Start = 0;
+            long s1Start = 0; // Server 1 does the first half
             long s1End = (numServers == 1) ? (TOTAL_PARTITIONS - 1) : (rangePerServer - 1);
             
-            // Server 2 Range
-            long s2Start = rangePerServer;
+            long s2Start = rangePerServer; // Server 2 does the second half
             long s2End = TOTAL_PARTITIONS - 1;
 
-            System.out.println("\n--- Starting Distributed Search ---");
+            // 3. Calc Total for ETA
+            // Total = 95 ^ length
+            double totalCombinations = Math.pow(95, pwdLen);
+            System.out.println("Total Combinations: " + String.format("%,.0f", totalCombinations));
+
+            System.out.println("\n--- Starting Search ---");
             
-            // Capture Start Time
             LocalDateTime startDateTime = LocalDateTime.now();
             long startTimeMillis = System.currentTimeMillis();
             System.out.println("Start Time: " + dtf.format(startDateTime));
+            System.out.println("--------------------------------------------------------------------------------");
 
-            // 3. Launch Threads to call Servers asynchronously
+            // 4. Start Search Threads
             final String[] result = {null};
-            
+            final int[] winningServer = {0}; // 0=None, 1=Server1, 2=Server2
+
             // Thread for Server 1
             Thread t1 = new Thread(() -> {
                 try {
                     String res = server1.search(hash, s1Start, s1End, threads, pwdLen);
-                    if (res != null) {
-                        result[0] = res;
-                        winningServer = 1; // Mark Server 1 as the winner
+                    if (res != null) { 
+                        result[0] = res; 
+                        winningServer[0] = 1; 
+                        finished = true; 
                     }
-                } catch (Exception e) { e.printStackTrace(); }
+                } catch (Exception e) {}
             });
+            t1.start();
 
             // Thread for Server 2
             Thread t2 = null;
@@ -84,60 +91,77 @@ public class SearchClient {
                 t2 = new Thread(() -> {
                     try {
                         String res = s2Ref.search(hash, s2Start, s2End, threads, pwdLen);
-                        if (res != null) {
-                            result[0] = res;
-                            winningServer = 2; // Mark Server 2 as the winner
+                        if (res != null) { 
+                            result[0] = res; 
+                            winningServer[0] = 2; 
+                            finished = true; 
                         }
-                    } catch (Exception e) { e.printStackTrace(); }
+                    } catch (Exception e) {}
                 });
+                t2.start();
             }
 
-            t1.start();
-            if (t2 != null) t2.start();
+            // 5. MONITORING LOOP (The Live ETA)
+            while (!finished) {
+                try {
+                    Thread.sleep(1000); // Check every 1 second
+                    
+                    // Fetch progress from servers
+                    long count1 = 0;
+                    try { count1 = server1.getProgress(); } catch(Exception e){}
+                    
+                    long count2 = 0;
+                    if (server2 != null) {
+                        try { count2 = server2.getProgress(); } catch(Exception e){}
+                    }
 
-            // 4. Wait for Completion & "Fake" Progress Monitor
-            boolean s1Done = false;
-            boolean s2Done = (numServers == 1);
+                    long totalTried = count1 + count2;
+                    long currentTime = System.currentTimeMillis();
+                    long timeElapsed = (currentTime - startTimeMillis) / 1000; // seconds
 
-            while (result[0] == null) {
-                if (!t1.isAlive()) s1Done = true;
-                if (t2 != null && !t2.isAlive()) s2Done = true;
-                
-                if (s1Done && s2Done) break;
-                
-                // NOTE: Real ETA requires server feedback. 
-                // We just sleep here to wait for the result.
-                Thread.sleep(100); 
+                    if (timeElapsed > 0) {
+                        double percentage = (totalTried / totalCombinations) * 100.0;
+                        long rate = totalTried / timeElapsed; // attempts/sec
+                        
+                        // Calc ETA
+                        long remaining = (long)totalCombinations - totalTried;
+                        long etaSeconds = (rate > 0) ? (remaining / rate) : 0;
+                        
+                        String etaString = String.format("%02d:%02d:%02d", 
+                            etaSeconds / 3600, (etaSeconds % 3600) / 60, etaSeconds % 60);
+
+                        // Overwrite line
+                        System.out.print(String.format("\r[%.4f%%] Tried: %,d (Rate: %,d/s) (ETA: %s)   ", 
+                            percentage, totalTried, rate, etaString));
+                    }
+                    
+                    // Stop if threads died naturally (search exhausted)
+                    if (!t1.isAlive() && (t2 == null || !t2.isAlive())) {
+                        finished = true;
+                    }
+
+                } catch (InterruptedException e) { break; }
             }
 
-            // Capture End Time
+            // 6. Report Results
+            System.out.println("\n--------------------------------------------------------------------------------");
             long endTimeMillis = System.currentTimeMillis();
             LocalDateTime endDateTime = LocalDateTime.now();
 
-            // 5. Stop & Report
-            if (result[0] != null) {
-                // Stop other servers immediately
-                try { server1.stopSearch(); } catch (Exception e) {}
-                if (server2 != null) try { server2.stopSearch(); } catch (Exception e) {}
+            // Stop servers
+            try { server1.stopSearch(); } catch (Exception e) {}
+            if (server2 != null) try { server2.stopSearch(); } catch (Exception e) {}
 
-                System.out.println("\n============================================");
-                System.out.println("           PASSWORD FOUND!                  ");
-                System.out.println("============================================");
-                
-                // Parse the result string if it looks like "Password: xyz, ThreadID: 5..."
-                // Or just print it directly if parsing is risky
-                System.out.println("Raw Result      : " + result[0]);
-                
-                System.out.println("--------------------------------------------");
-                System.out.println("Found At Server : Server " + winningServer);
+            if (result[0] != null) {
+                System.out.println("SUCCESS! Password Found:");
+                System.out.println("Result          : " + result[0]);
+                System.out.println("Found At Server : Server " + winningServer[0]);
                 System.out.println("Start Time      : " + dtf.format(startDateTime));
                 System.out.println("End Time        : " + dtf.format(endDateTime));
                 System.out.println("Total Duration  : " + (endTimeMillis - startTimeMillis) + " ms");
-                System.out.println("============================================");
-
             } else {
-                System.out.println("\nSearch finished. Password not found.");
-                System.out.println("End Time: " + dtf.format(endDateTime));
+                System.out.println("Search finished. Password not found.");
+                System.out.println("End Time        : " + dtf.format(endDateTime));
             }
 
         } catch (Exception e) {
