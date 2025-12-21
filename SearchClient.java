@@ -19,8 +19,8 @@ public class SearchClient {
         try {
             // --- CONFIGURATION ---
             // UPDATE THESE IPS TO MATCH YOUR REAL SETUP
-            String SERVER_1_IP = "172.20.10.3"; 
-            String SERVER_2_IP = "172.20.10.2"; 
+            String SERVER_1_IP = "10.87.145.208"; 
+            String SERVER_2_IP = "10.87.154.138"; 
             // ---------------------
 
             System.out.println("--- Distributed Password Cracker Client ---");
