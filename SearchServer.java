@@ -11,8 +11,6 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
     private final AtomicLong totalChecked = new AtomicLong(0);
     private volatile boolean keepSearching = true;
     private volatile String foundResult = null; 
-    
-    // Keep track of active threads to stop them later
     private List<BruteForceThread> activeThreads = new ArrayList<>();
 
     protected SearchServer() throws RemoteException {
@@ -24,28 +22,38 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         return totalChecked.get();
     }
 
-    // Called by BruteForceThread to update ETA efficiently
     public void addProgress(long count) {
         totalChecked.addAndGet(count);
     }
 
-    // --- UPDATED METHOD: PRINTS WHEN FOUND ---
+    // --- CASE 1: I FOUND IT ---
     public synchronized void foundPassword(String result) {
         this.foundResult = result;
         
-        // Print to the Server Console so you can see it immediately
-        System.out.println("\n========================================");
-        System.out.println(">>> PASSWORD FOUND: " + result);
-        System.out.println("========================================\n");
+        System.out.println("\n#################################################");
+        System.out.println(">>> PASSWORD FOUND ON THIS SERVER!");
+        System.out.println(">>> Result: " + result);
+        System.out.println("#################################################\n");
         
-        stopSearch(); // Stop everyone else
+        terminateThreads();
     }
-    // -----------------------------------------
 
+    // --- CASE 2: SOMEONE ELSE FOUND IT ---
     @Override
-    public void stopSearch() {
+    public void stopSearch(String winnerInfo) throws RemoteException {
+        if (!keepSearching) return; // Already stopped
+        
+        System.out.println("\n-------------------------------------------------");
+        System.out.println(">>> Search Stopped.");
+        System.out.println(">>> Password was found at: " + winnerInfo);
+        System.out.println("-------------------------------------------------\n");
+        
+        terminateThreads();
+    }
+
+    // Helper to kill threads
+    private void terminateThreads() {
         keepSearching = false;
-        // Stop all worker threads
         for (BruteForceThread t : activeThreads) {
             t.stopRunning();
         }
@@ -55,37 +63,31 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
     public String search(String targetHash, long start, long end, int numThreads, int length) throws RemoteException {
         System.out.println("Starting search | Length: " + length + " | Range: " + start + "-" + end + " | Threads: " + numThreads);
         
-        // Reset state
         totalChecked.set(0);
         keepSearching = true;
         foundResult = null;
         activeThreads.clear();
 
-        // --- PARTITION WORKLOAD AMONG THREADS ---
         long totalRange = end - start + 1;
         long chunk = totalRange / numThreads;
         
-        // Launch Threads
         for (int i = 0; i < numThreads; i++) {
             long tStart = start + (i * chunk);
-            long tEnd = (i == numThreads - 1) ? end : (tStart + chunk - 1); // Ensure last thread gets remainder
+            long tEnd = (i == numThreads - 1) ? end : (tStart + chunk - 1); 
             
-            if (tStart > end) break; // Safety check
+            if (tStart > end) break;
 
             BruteForceThread t = new BruteForceThread(i, targetHash, tStart, tEnd, length, this);
             activeThreads.add(t);
             t.start();
         }
 
-        // --- WAIT FOR RESULT ---
         try {
             boolean allFinished = false;
             while (keepSearching && !allFinished) {
-                Thread.sleep(100); // Check every 100ms
-                
+                Thread.sleep(100); 
                 if (foundResult != null) return foundResult;
 
-                // Check if all threads died naturally (search finished, not found)
                 allFinished = true;
                 for (BruteForceThread t : activeThreads) {
                     if (t.isAlive()) {
@@ -94,11 +96,9 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
                     }
                 }
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        } catch (InterruptedException e) { e.printStackTrace(); }
 
-        return foundResult; // Returns null if not found
+        return foundResult;
     }
 
     public static void main(String[] args) {
