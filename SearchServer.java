@@ -10,7 +10,7 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
 
     private final AtomicLong totalChecked = new AtomicLong(0);
     private volatile boolean keepSearching = true;
-    private volatile String foundResult = null; // Store the result here
+    private volatile String foundResult = null; 
     
     // Keep track of active threads to stop them later
     private List<BruteForceThread> activeThreads = new ArrayList<>();
@@ -29,11 +29,18 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         totalChecked.addAndGet(count);
     }
 
-    // Called by BruteForceThread when password is found
+    // --- UPDATED METHOD: PRINTS WHEN FOUND ---
     public synchronized void foundPassword(String result) {
         this.foundResult = result;
+        
+        // Print to the Server Console so you can see it immediately
+        System.out.println("\n========================================");
+        System.out.println(">>> PASSWORD FOUND: " + result);
+        System.out.println("========================================\n");
+        
         stopSearch(); // Stop everyone else
     }
+    // -----------------------------------------
 
     @Override
     public void stopSearch() {
@@ -71,7 +78,6 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         }
 
         // --- WAIT FOR RESULT ---
-        // The main thread waits here until a password is found OR all threads finish
         try {
             boolean allFinished = false;
             while (keepSearching && !allFinished) {
@@ -92,7 +98,7 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
             e.printStackTrace();
         }
 
-        return foundResult; // Returns null if not found, or the string if found
+        return foundResult; // Returns null if not found
     }
 
     public static void main(String[] args) {
