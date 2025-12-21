@@ -1,136 +1,108 @@
-import java.rmi.registry.Registry;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.server.UnicastRemoteObject;
+import java.rmi.Naming;
 import java.rmi.RemoteException;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicBoolean;
+import java.rmi.server.UnicastRemoteObject;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
-public class SearchServer implements SearchService {
+public class SearchServer extends UnicastRemoteObject implements SearchInterface {
+    private String serverName;
+    private List<BruteForceThread> threads = new ArrayList<>();
+    private volatile boolean keepRunning = true;
 
-    private final String serverName;
-    private final AtomicBoolean shouldStop = new AtomicBoolean(false);
-    private ExecutorService executor;
-    private PrintWriter fileLogger;
-
-    public SearchServer(String name) {
+    protected SearchServer(String name) throws RemoteException {
+        super();
         this.serverName = name;
-        try {
-            // Initialize logging to server_x.log
-            fileLogger = new PrintWriter(new FileWriter(name + ".log", true), true);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void log(String message) {
-        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
-        String logEntry = String.format("[%s] %s: %s", timestamp, serverName, message);
-        System.out.println(logEntry); // Console
-        if (fileLogger != null) {
-            fileLogger.println(logEntry); // File
-        }
     }
 
     @Override
-    public String startSearch(String targetHash, int startCharIdx, int endCharIdx, int numThreads, int passwordLength) throws RemoteException {
-        shouldStop.set(false);
-        log("Starting search. Threads: " + numThreads + ", Range indices: " + startCharIdx + "-" + endCharIdx);
-
-        executor = Executors.newFixedThreadPool(numThreads);
-        ExecutorCompletionService<String> completionService = new ExecutorCompletionService<>(executor);
-
-        // Calculate sub-ranges for local threads
-        int totalCharsInRange = endCharIdx - startCharIdx;
-        int charsPerThread = totalCharsInRange / numThreads;
-        int remainder = totalCharsInRange % numThreads;
+    public String search(String targetHash, long startRange, long endRange, int numThreads, int passwordLength) throws RemoteException {
+        this.keepRunning = true;
+        this.threads.clear();
         
-        int currentStart = startCharIdx;
+        // LOGGING: Required by Assignment
+        log("Server started. Assigned First-Char Range: " + startRange + " to " + endRange + ", Threads: " + numThreads);
 
+        // Partitioning: Split the assigned range among local threads
+        long totalRange = endRange - startRange + 1;
+        long chunk = totalRange / numThreads;
+        long remainder = totalRange % numThreads;
+        
+        long currentStart = startRange;
+
+        // Create and start threads
         for (int i = 0; i < numThreads; i++) {
-            int extra = (i < remainder) ? 1 : 0;
-            int currentEnd = currentStart + charsPerThread + extra;
+            long extra = (i < remainder) ? 1 : 0;
+            long tEnd = currentStart + chunk + extra - 1;
             
-            // Create and submit worker
-            // We pass 'shouldStop' so the worker can check it and terminate early
-            CrackerWorker worker = new CrackerWorker(i, currentStart, currentEnd, targetHash, passwordLength, shouldStop);
-            completionService.submit(worker);
-            
-            log("Thread " + i + " assigned range index: " + currentStart + " to " + currentEnd);
-            currentStart = currentEnd;
+            if (tEnd >= currentStart) { // Only start thread if it has work
+                BruteForceThread t = new BruteForceThread(i, targetHash, currentStart, tEnd, passwordLength, this);
+                threads.add(t);
+                t.start();
+                log("Thread " + i + " started. Range: " + currentStart + " to " + tEnd);
+            }
+            currentStart = tEnd + 1;
         }
 
+        // Wait for threads to finish
         try {
-            // Wait for first result or all to finish
-            for (int i = 0; i < numThreads; i++) {
-                Future<String> resultFuture = completionService.poll(100, TimeUnit.MILLISECONDS);
-                
-                // If we get a result, it means someone found it
-                if (resultFuture != null && resultFuture.get() != null) {
-                    String foundMsg = resultFuture.get();
-                    log("Password found by local thread: " + foundMsg);
-                    stopSearch(); // Kill other local threads
-                    return foundMsg;
-                }
-                
-                // Check if we were told to stop by the client
-                if (shouldStop.get()) {
-                    break;
-                }
-                
-                // If no result yet, decrement i to keep waiting, but don't loop indefinitely
-                // (Simplified logic: actually we just wait for the pool)
-                if (resultFuture == null) i--; 
+            for (BruteForceThread t : threads) {
+                t.join();
             }
-        } catch (Exception e) {
-            log("Error during search: " + e.getMessage());
-        } finally {
-            stopSearch(); // Ensure cleanup
+        } catch (InterruptedException e) {
+            log("Server interrupted.");
+        }
+
+        // Check results
+        for (BruteForceThread t : threads) {
+            if (t.getResult() != null) {
+                log("Password found by Thread " + t.getThreadID());
+                return t.getResult(); // Returns "Password, ID, Time"
+            }
         }
         
-        log("Search completed (Not found or stopped).");
-        return null;
+        return null; // Not found by this server
     }
 
     @Override
     public void stopSearch() throws RemoteException {
-        if (!shouldStop.get()) {
-            shouldStop.set(true);
-            log("Received STOP signal. Shutting down threads.");
-            if (executor != null) {
-                executor.shutdownNow();
-            }
+        this.keepRunning = false;
+        for (BruteForceThread t : threads) {
+            t.stopRunning();
+        }
+        log("Stop command received. All threads stopped.");
+    }
+
+    // Helper: Write to server_x.log
+    public synchronized void log(String message) {
+        try (PrintWriter out = new PrintWriter(new FileWriter(serverName + ".log", true))) {
+            out.println(new java.util.Date() + " : " + message);
+        } catch (IOException e) {
+            System.err.println("Error writing to log: " + e.getMessage());
         }
     }
 
     public static void main(String[] args) {
-        if (args.length < 1) {
-            System.err.println("Usage: java SearchServer <server_name> <port>");
-            System.err.println("Example: java SearchServer Server1 1099");
+        if (args.length != 1) {
+            System.out.println("Usage: java -Djava.rmi.server.hostname=<THIS_PC_IP> SearchServer <server_name>");
+            System.out.println("Example: java -Djava.rmi.server.hostname=192.168.0.11 SearchServer server_1");
             return;
         }
-        
-        String name = args[0];
-        int port = (args.length > 1) ? Integer.parseInt(args[1]) : 1099;
-
         try {
-            SearchServer server = new SearchServer(name);
-            SearchService stub = (SearchService) UnicastRemoteObject.exportObject(server, 0);
-
-            Registry registry;
-            try {
-                registry = LocateRegistry.createRegistry(port);
+            // Start RMI Registry on port 1099
+            try { 
+                java.rmi.registry.LocateRegistry.createRegistry(1099); 
+                System.out.println("RMI Registry started on port 1099.");
             } catch (Exception e) {
-                registry = LocateRegistry.getRegistry(port);
+                System.out.println("RMI Registry already running.");
             }
-            
-            registry.rebind(name, stub);
-            System.out.println(name + " bound in registry on port " + port);
-            
+
+            String name = args[0];
+            SearchServer server = new SearchServer(name);
+            Naming.rebind(name, server);
+            System.out.println(name + " is ready and waiting for the Client...");
         } catch (Exception e) {
             e.printStackTrace();
         }

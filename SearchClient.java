@@ -1,135 +1,114 @@
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.util.ArrayList;
-import java.util.List;
+import java.rmi.Naming;
 import java.util.Scanner;
-import java.util.concurrent.*;
 
 public class SearchClient {
-
-    // ASCII range: 32-126 (95 characters)
-    private static final int TOTAL_CHARS = 95;
+    // Partitioning based on First Character (ASCII 32-126 is roughly 95 chars)
+    private static final int TOTAL_PARTITIONS = 95; 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("=== Distributed MD5 Cracker Client (Multi-PC) ===");
-        
-        // --- 1. User Inputs ---
-        System.out.print("Enter MD5 Hash: ");
-        String targetHash = scanner.next().trim();
-        
-        System.out.print("Enter Password Length: ");
-        int passwordLength = scanner.nextInt();
-
-        System.out.print("Enter Threads per Server: ");
-        int threadsPerServer = scanner.nextInt();
-
-        System.out.print("Enter Number of Servers (1 or 2): ");
-        int numServers = scanner.nextInt();
-
-        // --- 2. Connection Setup ---
-        List<SearchService> servers = new ArrayList<>();
-        List<String> serverIps = new ArrayList<>();
-
-        for (int i = 1; i <= numServers; i++) {
-            System.out.println("\n--- Configuring Server " + i + " ---");
-            System.out.print("Enter IP Address for Server " + i + " (e.g., 192.168.1.50): ");
-            String ip = scanner.next().trim();
-
-            try {
-                // Connect to the Registry at the specific IP address
-                Registry registry = LocateRegistry.getRegistry(ip, 1099);
-                
-                // Look up the server by name. 
-                // We assume you started Server 1 as "Server1" and Server 2 as "Server2".
-                String serverName = "Server" + i;
-                SearchService svc = (SearchService) registry.lookup(serverName);
-                
-                servers.add(svc);
-                serverIps.add(ip);
-                System.out.println("Success: Connected to " + serverName + " at " + ip);
-                
-            } catch (Exception e) {
-                System.err.println("Error: Failed to connect to Server " + i + " at " + ip);
-                System.err.println("Tip: Ensure you started the server with: -Djava.rmi.server.hostname=" + ip);
-                e.printStackTrace();
-                return; // Stop execution if we can't connect
-            }
-        }
-
-        System.out.println("\nAll servers connected. Starting distributed search...");
-
-        // --- 3. Partitioning & Execution ---
-        ExecutorService clientExecutor = Executors.newFixedThreadPool(numServers);
-        CompletionService<String> completionService = new ExecutorCompletionService<>(clientExecutor);
-
-        long startTime = System.currentTimeMillis();
-        
-        // Calculate the partition size (95 chars / numServers)
-        int charsPerServer = TOTAL_CHARS / numServers;
-        int remainder = TOTAL_CHARS % numServers;
-        int currentStart = 0;
-
-        for (int i = 0; i < numServers; i++) {
-            int extra = (i < remainder) ? 1 : 0;
-            int currentEnd = currentStart + charsPerServer + extra;
-
-            final int sIdx = currentStart;
-            final int eIdx = currentEnd;
-            final SearchService server = servers.get(i);
-            final String ip = serverIps.get(i);
-            final int serverId = i + 1;
-
-            // Submit the task to the client's thread pool
-            completionService.submit(() -> {
-                System.out.println("-> Dispatching Range [" + sIdx + "-" + eIdx + "] to Server " + serverId + " (" + ip + ")");
-                return server.startSearch(targetHash, sIdx, eIdx, threadsPerServer, passwordLength);
-            });
-            
-            currentStart = currentEnd;
-        }
-
-        // --- 4. Result Handling ---
-        String foundResult = null;
         try {
-            // We wait for the first server to return a non-null result (Password Found)
-            // Or for all servers to finish returning null (Password Not Found)
-            for (int i = 0; i < numServers; i++) {
-                Future<String> f = completionService.take(); // Blocks until a server responds
-                String result = f.get();
-                if (result != null) {
-                    foundResult = result;
-                    break; // Found the password!
-                }
+            // --- USER CONFIGURATION (EDIT THESE IPS) ---
+            // IP address of PC 2 (Server 1 - Your Friend's IP)
+            String SERVER_1_IP = "172.20.10.2"; 
+            
+            // IP address of Server 2 (If using 1 server, ignore this)
+            String SERVER_2_IP = "192.168.0.12"; 
+            // -------------------------------------------
+
+            System.out.println("--- Distributed Password Cracker Client ---");
+            System.out.print("Enter MD5 Hash: ");
+            String hash = scanner.nextLine().trim();
+            
+            System.out.print("Enter Password Length: ");
+            int pwdLen = scanner.nextInt();
+            
+            System.out.print("Enter Threads per Server: ");
+            int threads = scanner.nextInt();
+            
+            System.out.print("Enter Number of Servers (1 or 2): ");
+            int numServers = scanner.nextInt();
+
+            // 1. Connect to Servers
+            System.out.println("Connecting to Server 1 at " + SERVER_1_IP + "...");
+            SearchInterface server1 = (SearchInterface) Naming.lookup("rmi://" + SERVER_1_IP + "/server_1");
+            
+            SearchInterface server2 = null;
+            if (numServers == 2) {
+                System.out.println("Connecting to Server 2 at " + SERVER_2_IP + "...");
+                server2 = (SearchInterface) Naming.lookup("rmi://" + SERVER_2_IP + "/server_2");
             }
+
+            // 2. Partition the Work
+            long rangePerServer = TOTAL_PARTITIONS / numServers;
+            
+            // Server 1 Range
+            long s1Start = 0;
+            long s1End = (numServers == 1) ? (TOTAL_PARTITIONS - 1) : (rangePerServer - 1);
+            
+            // Server 2 Range
+            long s2Start = rangePerServer;
+            long s2End = TOTAL_PARTITIONS - 1;
+
+            System.out.println("Starting Distributed Search...");
+            long startTime = System.currentTimeMillis();
+
+            // 3. Launch Threads to call Servers asynchronously
+            final String[] result = {null};
+            
+            // Thread for Server 1
+            Thread t1 = new Thread(() -> {
+                try {
+                    String res = server1.search(hash, s1Start, s1End, threads, pwdLen);
+                    if (res != null) result[0] = res;
+                } catch (Exception e) { e.printStackTrace(); }
+            });
+
+            // Thread for Server 2
+            Thread t2 = null;
+            if (numServers == 2) {
+                final SearchInterface s2Ref = server2;
+                t2 = new Thread(() -> {
+                    try {
+                        String res = s2Ref.search(hash, s2Start, s2End, threads, pwdLen);
+                        if (res != null) result[0] = res;
+                    } catch (Exception e) { e.printStackTrace(); }
+                });
+            }
+
+            t1.start();
+            if (t2 != null) t2.start();
+
+            // 4. Wait for Completion
+            boolean s1Done = false;
+            boolean s2Done = (numServers == 1);
+
+            while (result[0] == null) {
+                if (!t1.isAlive()) s1Done = true;
+                if (t2 != null && !t2.isAlive()) s2Done = true;
+                if (s1Done && s2Done) break;
+                Thread.sleep(100);
+            }
+
+            long endTime = System.currentTimeMillis();
+
+            // 5. Stop & Report
+            if (result[0] != null) {
+                // Stop other servers immediately
+                try { server1.stopSearch(); } catch (Exception e) {}
+                if (server2 != null) try { server2.stopSearch(); } catch (Exception e) {}
+
+                System.out.println("\nSUCCESS! Password Found:");
+                System.out.println(result[0]); // Format: "Password, ID, Time"
+                System.out.println("Total System Time: " + (endTime - startTime) + "ms");
+            } else {
+                System.out.println("\nSearch finished. Password not found.");
+            }
+
         } catch (Exception e) {
+            System.out.println("Client Error: " + e.getMessage());
             e.printStackTrace();
         }
-
-        long endTime = System.currentTimeMillis();
-        long duration = endTime - startTime;
-
-        // --- 5. Cleanup ---
-        // Stop all servers immediately (Propagation of "Found" signal)
-        System.out.println("\nStopping all servers...");
-        for (SearchService s : servers) {
-            try { s.stopSearch(); } catch (Exception e) { /* Ignore connection errors during stop */ }
-        }
-        clientExecutor.shutdownNow();
-
-        // --- 6. Final Report ---
-        System.out.println("\n========================================");
-        if (foundResult != null) {
-            System.out.println("STATUS: PASSWORD FOUND");
-            System.out.println(foundResult); // Contains Password, Thread ID
-        } else {
-            System.out.println("STATUS: PASSWORD NOT FOUND");
-            System.out.println("Checked all combinations in the assigned range.");
-        }
-        System.out.println("Total Search Time: " + duration + " ms");
-        System.out.println("========================================");
-        
-        System.exit(0);
     }
 }
