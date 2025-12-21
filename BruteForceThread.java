@@ -1,6 +1,7 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.nio.charset.StandardCharsets;
 
 public class BruteForceThread extends Thread {
     
@@ -24,9 +25,14 @@ public class BruteForceThread extends Thread {
     private byte[] targetBytes;
     private SearchServer server; 
     private volatile boolean keepRunning = true;
-    private String result = null; 
 
-    // ThreadLocal MD5 for performance
+    // --- SPEED FIX: Larger Batch Size ---
+    // Only update progress every 500,000 attempts to stop lag
+    private long localCount = 0; 
+    private static final long BATCH_SIZE = 500000; 
+    // ------------------------------------
+
+    // ThreadLocal MD5 (Reuse MD5 instance per thread)
     private static final ThreadLocal<MessageDigest> THREAD_LOCAL_MD5 = ThreadLocal.withInitial(() -> {
         try {
             return MessageDigest.getInstance("MD5");
@@ -49,56 +55,67 @@ public class BruteForceThread extends Thread {
         MessageDigest md = THREAD_LOCAL_MD5.get();
         byte[] candidateBytes = new byte[passwordLength];
         long startTime = System.currentTimeMillis();
-        int suffixLen = passwordLength - 1;
 
-        // Iterate through Assigned First Characters
+        // 1. Iterate through Assigned First Characters (Prefix)
         for (long firstCharIdx = startCharIndex; firstCharIdx <= endCharIndex && keepRunning; firstCharIdx++) {
             
+            // Safety: Should not happen if partitioning is right, but prevents crash
             if (firstCharIdx >= CHARSET_SIZE) break;
 
             candidateBytes[0] = (byte) CHARSET[(int)firstCharIdx];
 
-            // Case: Length 1 (Unlikely but handled)
-            if (suffixLen == 0) {
-                 check(md, candidateBytes, startTime);
-                 continue;
-            }
-
-            // Odometer Logic for Suffix
-            int[] indices = new int[suffixLen]; 
-            boolean finished = false;
-
-            while (!finished && keepRunning) {
-                for (int i = 0; i < suffixLen; i++) {
-                    candidateBytes[i + 1] = (byte) CHARSET[indices[i]];
-                }
-
+            // 2. Recursive Search for the rest
+            if (passwordLength > 1) {
+                recursiveSearch(1, candidateBytes, md, startTime);
+            } else {
                 check(md, candidateBytes, startTime);
-
-                // Increment odometer
-                for (int pos = suffixLen - 1; pos >= 0; pos--) {
-                    indices[pos]++;
-                    if (indices[pos] >= CHARSET_SIZE) {
-                        indices[pos] = 0;
-                        if (pos == 0) finished = true;
-                    } else {
-                        break;
-                    }
-                }
             }
+        }
+        
+        // Final flush of progress count
+        if (localCount > 0) {
+            server.addProgress(localCount);
+        }
+    }
+
+    // Recursive helper to fill remaining bytes
+    private void recursiveSearch(int index, byte[] candidateBytes, MessageDigest md, long startTime) {
+        if (!keepRunning) return;
+
+        // Base Case: Array is full. Hash it.
+        if (index == passwordLength) {
+            check(md, candidateBytes, startTime);
+            return;
+        }
+
+        // Recursive Step: Try all 95 characters for this position
+        for (int i = 0; i < CHARSET_SIZE; i++) {
+            candidateBytes[index] = (byte) CHARSET[i];
+            recursiveSearch(index + 1, candidateBytes, md, startTime);
+            
+            // Check stop flag frequently
+            if (!keepRunning) return;
         }
     }
 
     private void check(MessageDigest md, byte[] candidateBytes, long startTime) {
         md.update(candidateBytes);
-        byte[] digest = md.digest();
-
-        if (Arrays.equals(digest, targetBytes)) {
+        
+        if (Arrays.equals(md.digest(), targetBytes)) {
             long duration = System.currentTimeMillis() - startTime;
-            String password = new String(candidateBytes);
-            // Format required by Assignment: "Password, Thread ID, Time"
-            this.result = String.format("Password: %s, ThreadID: %d, Time: %dms", password, this.threadID, duration);
-            this.keepRunning = false; 
+            // Create string safely
+            String password = new String(candidateBytes, StandardCharsets.UTF_8);
+            String res = String.format("Password: %s, ThreadID: %d, Time: %dms", password, this.threadID, duration);
+            
+            // Notify Server
+            server.foundPassword(res);
+        }
+
+        // --- BATCHED UPDATE ---
+        localCount++;
+        if (localCount >= BATCH_SIZE) {
+            server.addProgress(localCount);
+            localCount = 0;
         }
     }
 
@@ -106,14 +123,7 @@ public class BruteForceThread extends Thread {
         this.keepRunning = false;
     }
 
-    public String getResult() {
-        return result;
-    }
-
-    public int getThreadID() {
-        return threadID;
-    }
-
+    // Helper to convert Hash String to Bytes
     private static byte[] hexStringToByteArray(String s) {
         int len = s.length();
         byte[] data = new byte[len / 2];
