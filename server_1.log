@@ -37,3 +37,52 @@ Sun Dec 21 17:11:39 MYT 2025 : Thread 8 started. Range: 39 to 42
 Sun Dec 21 17:11:39 MYT 2025 : Thread 9 started. Range: 43 to 46
 Sun Dec 21 17:11:39 MYT 2025 : Password found by Thread 0
 Sun Dec 21 17:11:39 MYT 2025 : Stop command received. All threads stopped.
+Sun Dec 21 17:22:12 MYT 2025 : Server started. Assigned First-Char Range: 0 to 46, Threads: 10
+Sun Dec 21 17:22:12 MYT 2025 : Thread 0 started. Range: 0 to 4
+Sun Dec 21 17:22:12 MYT 2025 : Thread 1 started. Range: 5 to 9
+Sun Dec 21 17:22:12 MYT 2025 : Thread 2 started. Range: 10 to 14
+Sun Dec 21 17:22:12 MYT 2025 : Thread 3 started. Range: 15 to 19
+Sun Dec 21 17:22:12 MYT 2025 : Thread 4 started. Range: 20 to 24
+Sun Dec 21 17:22:12 MYT 2025 : Thread 5 started. Range: 25 to 29
+Sun Dec 21 17:22:12 MYT 2025 : Thread 6 started. Range: 30 to 34
+Sun Dec 21 17:22:12 MYT 2025 : Thread 7 started. Range: 35 to 38
+Sun Dec 21 17:22:12 MYT 2025 : Thread 8 started. Range: 39 to 42
+Sun Dec 21 17:22:12 MYT 2025 : Thread 9 started. Range: 43 to 46
+Sun Dec 21 17:22:12 MYT 2025 : Password found by Thread 0
+Sun Dec 21 17:22:12 MYT 2025 : Stop command received. All threads stopped.
+Sun Dec 21 17:22:49 MYT 2025 : Server started. Assigned First-Char Range: 0 to 94, Threads: 10
+Sun Dec 21 17:22:49 MYT 2025 : Thread 0 started. Range: 0 to 9
+Sun Dec 21 17:22:49 MYT 2025 : Thread 1 started. Range: 10 to 19
+Sun Dec 21 17:22:49 MYT 2025 : Thread 2 started. Range: 20 to 29
+Sun Dec 21 17:22:49 MYT 2025 : Thread 3 started. Range: 30 to 39
+Sun Dec 21 17:22:49 MYT 2025 : Thread 4 started. Range: 40 to 49
+Sun Dec 21 17:22:49 MYT 2025 : Thread 5 started. Range: 50 to 58
+Sun Dec 21 17:22:49 MYT 2025 : Thread 6 started. Range: 59 to 67
+Sun Dec 21 17:22:49 MYT 2025 : Thread 7 started. Range: 68 to 76
+Sun Dec 21 17:22:49 MYT 2025 : Thread 8 started. Range: 77 to 85
+Sun Dec 21 17:22:49 MYT 2025 : Thread 9 started. Range: 86 to 94
+Sun Dec 21 17:22:49 MYT 2025 : Password found by Thread 0
+Sun Dec 21 17:22:49 MYT 2025 : Stop command received. All threads stopped.
+Sun Dec 21 17:23:21 MYT 2025 : Server started. Assigned First-Char Range: 0 to 46, Threads: 10
+Sun Dec 21 17:23:21 MYT 2025 : Thread 0 started. Range: 0 to 4
+Sun Dec 21 17:23:21 MYT 2025 : Thread 1 started. Range: 5 to 9
+Sun Dec 21 17:23:21 MYT 2025 : Thread 2 started. Range: 10 to 14
+Sun Dec 21 17:23:21 MYT 2025 : Thread 3 started. Range: 15 to 19
+Sun Dec 21 17:23:21 MYT 2025 : Thread 4 started. Range: 20 to 24
+Sun Dec 21 17:23:21 MYT 2025 : Thread 5 started. Range: 25 to 29
+Sun Dec 21 17:23:21 MYT 2025 : Thread 6 started. Range: 30 to 34
+Sun Dec 21 17:23:21 MYT 2025 : Thread 7 started. Range: 35 to 38
+Sun Dec 21 17:23:21 MYT 2025 : Thread 8 started. Range: 39 to 42
+Sun Dec 21 17:23:21 MYT 2025 : Thread 9 started. Range: 43 to 46
+Sun Dec 21 17:26:04 MYT 2025 : Stop command received. All threads stopped.
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Server started. Assigned First-Char Range: 0 to 46, Threads: 10
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 0 started. Range: 0 to 4
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 1 started. Range: 5 to 9
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 2 started. Range: 10 to 14
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 3 started. Range: 15 to 19
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 4 started. Range: 20 to 24
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 5 started. Range: 25 to 29
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 6 started. Range: 30 to 34
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 7 started. Range: 35 to 38
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 8 started. Range: 39 to 42
+Sun Dec 21 17:42:02 GMT+08:00 2025 : Thread 9 started. Range: 43 to 46
