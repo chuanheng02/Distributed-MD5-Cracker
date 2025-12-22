@@ -3,31 +3,33 @@
 **A distributed, multithreaded MD5 brute-force password search system using Java RMI.**
 *Developed for TMN4013 Distributed Systems Assignment 2 (2025/2026).*
 
+
+
 ## 📖 Overview
-This project implements a **Distributed System** to crack MD5 password hashes. Unlike a standard standalone program, this system utilizes **Java RMI (Remote Method Invocation)** to split the heavy computational workload across **three physical machines**:
-1.  **Client Node:** Manages the job, partitions the search space, and aggregates results.
-2.  **Server Node 1:** Dedicates resources to searching the first half of the password space.
-3.  **Server Node 2:** Dedicates resources to searching the second half of the password space.
+This project implements a **Distributed System** to crack MD5 password hashes. [cite_start]Unlike a standard standalone program, this system utilizes **Java RMI (Remote Method Invocation)** to split the heavy computational workload across **three physical machines** per cluster [cite: 5-6, 19].
+
+To accelerate data collection and performance evaluation, this project utilizes **two parallel 3-PC clusters**. [cite_start]This allows for simultaneous execution of different test cases to efficiently measure the system's scalability [cite: 81-87].
 
 ### Key Features
 * **3-PC Architecture:** Fully distributed setup verifying "True Parallelism" across physical hardware.
-* **Dynamic Partitioning:** The Client automatically calculates and assigns non-overlapping search ranges (e.g., A-M to Server 1, N-Z to Server 2).
-* **Remote Termination:** If one server finds the password, the Client immediately triggers a remote stop signal to all other servers to save resources.
-* **Performance Logging:** Servers generate detailed `server_x.log` files tracking thread start/stop times and activity.
+* [cite_start]**Static Search-Space Partitioning:** The Client automatically calculates and assigns non-overlapping search ranges (e.g., first character '!' to 'M' for Server 1) to ensure no redundant work [cite: 60-64].
+* [cite_start]**Remote Termination:** If one server finds the password, the Client immediately triggers a remote stop signal to all other servers to save resources[cite: 30, 137].
+* **Real-time Progress Monitoring:** The client polls servers for progress updates and displays a real-time ETA and percentage complete.
+* [cite_start]**Performance Logging:** Servers generate detailed `server_x.log` files tracking thread start/stop times and activity [cite: 70-75].
 
 ---
 
-## ⚙️ Testbed Configuration
-The system has been verified using a **3-PC Topology** on the following IP addresses.
+## ⚙️ Testbed Environments
+To expedite the assignment's performance analysis, two identical distributed environments are deployed.
 
-### Configuration Set 1 (Primary)
+### 🔹 Cluster A (Configuration Set 1)
 | Role | Machine ID | IP Address | Function |
 | :--- | :--- | :--- | :--- |
 | **Client** | Machine 1 | `10.64.116.193` | Coordinator (Runs `SearchClient`) |
 | **Server 1** | Machine 3 | `10.64.116.211` | Worker Node (Runs `SearchServer`) |
 | **Server 2** | Machine 4 | `10.64.119.149` | Worker Node (Runs `SearchServer`) |
 
-### Configuration Set 2 (Secondary)
+### 🔹 Cluster B (Configuration Set 2)
 | Role | Machine ID | IP Address | Function |
 | :--- | :--- | :--- | :--- |
 | **Client** | Machine 2 | `10.64.119.229` | Coordinator (Runs `SearchClient`) |
@@ -36,61 +38,65 @@ The system has been verified using a **3-PC Topology** on the following IP addre
 
 ---
 
-## 🚀 Execution Guide (3-PC Setup)
+## 🚀 Execution Guide
 
 ### Prerequisites
-* Java JDK installed on all 3 machines.
-* All machines must be on the same Local Area Network (LAN).
-* **Firewalls must be disabled** or configured to allow traffic on port `1099`.
+* Java JDK installed on all machines.
+* **Firewalls must be disabled** (or port 1099 allowed).
+* **Important:** Before compiling `SearchClient.java`, you must manually update the `SERVER_1_IP` and `SERVER_2_IP` variables in the code to match the Cluster you are currently testing.
 
-### Step 1: Configure Server 1 (Machine 3)
-1.  Open a terminal.
-2.  Start the RMI Registry:
-    ```bash
-    rmiregistry 1099
-    ```
-3.  Open a **second terminal** and start the Server application:
-    ```bash
-    java "-Djava.rmi.server.hostname=10.64.116.211" SearchServer Server1
-    ```
+### Step 1: Start Server 1
+Open a terminal on the designated Server 1 machine (e.g., Machine 3 or 5) and run:
+```bash
+# Syntax: java "-Djava.rmi.server.hostname=<Current_Machine_IP>" SearchServer server_1
+# Example for Cluster A:
+java "-Djava.rmi.server.hostname=10.64.116.211" SearchServer server_1
 
-### Step 2: Configure Server 2 (Machine 4)
-1.  Open a terminal.
-2.  Start the RMI Registry:
-    ```bash
-    rmiregistry 1099
-    ```
-3.  Open a **second terminal** and start the Server application:
-    ```bash
-    java "-Djava.rmi.server.hostname=10.64.119.149" SearchServer Server2
-    ```
+```
 
-### Step 3: Run the Client (Machine 1)
-1.  Open a terminal on the Client machine.
-2.  Execute the client:
-    ```bash
-    java SearchClient
-    ```
-3.  Enter the configuration when prompted:
-    * **MD5 Hash:** (Enter target hash)
-    * **Password Length:** `2` (or target length)
-    * **Number of Servers:** `2`
-    * **Server 1 IP:** `10.64.116.211`
-    * **Server 2 IP:** `10.64.119.149`
+### Step 2: Start Server 2
+
+Open a terminal on the designated Server 2 machine (e.g., Machine 4 or 6) and run:
+
+```bash
+# Syntax: java "-Djava.rmi.server.hostname=<Current_Machine_IP>" SearchServer server_2
+# Example for Cluster A:
+java "-Djava.rmi.server.hostname=10.64.119.149" SearchServer server_2
+
+```
+
+### Step 3: Run the Client
+
+Open a terminal on the designated Client machine (e.g., Machine 1 or 2) and run:
+
+```bash
+java SearchClient
+
+```
+
+Follow the on-screen prompts to input the MD5 hash, password length, threads per server, and server count .
 
 ---
 
 ## 📊 Performance Evaluation
-This setup allows for the calculation of **Speedup** and **Efficiency** metrics by comparing the execution time of the 3-PC Distributed setup against a Single-PC baseline.
+[cite_start]This setup allows for the calculation of **Speedup** and **Efficiency** metrics by comparing the execution time of the 3-PC Distributed setup against a Single-PC baseline, as required by the assignment guidelines [cite: 90-92].
 
-* **Speedup:** $T_1 / T_n$ (Time on 1 PC / Time on 3 PCs)
-* **Efficiency:** Speedup / Total Threads
+* **Speedup ($S$):**
+  $$S = \frac{T_{1}}{T_{n}}$$
+  *(Time on 1 Server / Time on 2 Servers)*
 
----
+* **Efficiency ($E$):**
+  $$E = \frac{S}{N}$$
+  *(Speedup / Total Threads)*
 
 ## 👥 Group Members
+
 * **Ng Clarence Chuan Hann** (<84832>)
 * **Brendan Chan Kah Le** (<83403>)
-* **<Chong Ming Zin** (<83489>)
+* **Chong Ming Zin** (<83489>)
 * **Xavier Liong Zhi Hao** (<86709>)
 * **Alif Aiman Bin Othman** (<83162>)
+
+```
+
+```
