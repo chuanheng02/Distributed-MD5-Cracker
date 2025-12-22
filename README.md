@@ -3,7 +3,14 @@
 **A distributed, multithreaded MD5 brute-force password search system using Java RMI.**
 *Developed for TMN4013 Distributed Systems Assignment 2 (2025/2026).*
 
+## 👥 Group Members
 
+* **Ng Clarence Chuan Hann** (<84832>)
+* **Brendan Chan Kah Le** (<83403>)
+* **Chong Ming Zin** (<83489>)
+* **Xavier Liong Zhi Hao** (<86709>)
+* **Alif Aiman Bin Othman** (<83162>)
+---
 
 ## 📖 Overview
 This project implements a **Distributed System** to crack MD5 password hashes. Unlike a standard standalone program, this system utilizes **Java RMI (Remote Method Invocation)** to split the heavy computational workload across **three physical machines** per cluster.
@@ -109,10 +116,4 @@ This setup allows for the calculation of **Speedup** and **Efficiency** metrics 
   $$E = \frac{S}{N}$$
   *(Speedup / Total Threads)*
 
-## 👥 Group Members
-
-* **Ng Clarence Chuan Hann** (<84832>)
-* **Brendan Chan Kah Le** (<83403>)
-* **Chong Ming Zin** (<83489>)
-* **Xavier Liong Zhi Hao** (<86709>)
-* **Alif Aiman Bin Othman** (<83162>)
+---
