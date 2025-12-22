@@ -90,7 +90,7 @@ This setup allows for the calculation of **Speedup** and **Efficiency** metrics 
 
 ## 👥 Group Members
 * **Ng Clarence Chuan Hann** (<84832>)
-* **<Brendan Chan Kah Le>** (<83403>)
-* **<Chong Ming Zin>** (<83489>)
-* * **<Xavier Liong Zhi Hao>** (<86709>)
-* * **<Alif Aiman Bin Othman>** (<83162>)
+* **Brendan Chan Kah Le** (<83403>)
+* **<Chong Ming Zin** (<83489>)
+* **Xavier Liong Zhi Hao** (<86709>)
+* **Alif Aiman Bin Othman** (<83162>)
