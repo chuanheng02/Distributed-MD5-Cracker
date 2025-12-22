@@ -45,7 +45,7 @@ To expedite the assignment's performance analysis, two identical distributed env
 * **Firewalls must be disabled** (or port 1099 allowed).
 * **Important:** Before compiling `SearchClient.java`, you must manually update the `SERVER_1_IP` and `SERVER_2_IP` variables in the code to match the Cluster you are currently testing.
 
-### 0. Compilation
+### Step 0. Compilation
 Before running the system, compile all Java files from the source directory on all machines:
 ```bash
 javac *.java
@@ -54,13 +54,20 @@ javac *.java
 
 
 ### Step 1: Start Server 1
-Open a terminal on the designated Server 1 machine (e.g., Machine 3 or 5) and run:
-```bash
-# Syntax: java "-Djava.rmi.server.hostname=<Current_Machine_IP>" SearchServer server_1
-# Example for Cluster A:
-java "-Djava.rmi.server.hostname=10.64.116.211" SearchServer server_1
+Perform these steps on the designated Server 1 machine (e.g., Machine 3 or 5):
 
-```
+1.  **Terminal 1 (Registry):** Start the RMI registry.
+    ```bash
+    rmiregistry 1099
+    ```
+    *(Keep this window open)*
+
+2.  **Terminal 2 (Server App):** Start the server.
+    ```bash
+    # Syntax: java "-Djava.rmi.server.hostname=<Current_Machine_IP>" SearchServer server_1
+    # Example for Cluster A:
+    java "-Djava.rmi.server.hostname=10.64.116.211" SearchServer server_1
+    ```
 
 ### Step 2: Start Server 2
 
