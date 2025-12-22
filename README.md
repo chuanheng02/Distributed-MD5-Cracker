@@ -54,7 +54,7 @@ javac *.java
 
 
 ### Step 1: Start Server 1
-Perform these steps on the designated Server 1 machine (e.g., Machine 3 or 5):
+Perform these steps on the designated Server 1 machine:
 
 1.  **Terminal 1 (Registry):** Start the RMI registry.
     ```bash
@@ -70,15 +70,20 @@ Perform these steps on the designated Server 1 machine (e.g., Machine 3 or 5):
     ```
 
 ### Step 2: Start Server 2
+Perform these steps on the designated Server 2 machine:
 
-Open a terminal on the designated Server 2 machine (e.g., Machine 4 or 6) and run:
+1.  **Terminal 1 (Registry):** Start the RMI registry.
+    ```bash
+    rmiregistry 1099
+    ```
+    *(Keep this window open)*
 
-```bash
-# Syntax: java "-Djava.rmi.server.hostname=<Current_Machine_IP>" SearchServer server_2
-# Example for Cluster A:
-java "-Djava.rmi.server.hostname=10.64.119.149" SearchServer server_2
-
-```
+2.  **Terminal 2 (Server App):** Start the server.
+    ```bash
+    # Syntax: java "-Djava.rmi.server.hostname=<Current_Machine_IP>" SearchServer server_2
+    # Example for Cluster A:
+    java "-Djava.rmi.server.hostname=10.64.119.149" SearchServer server_2
+    ```
 
 ### Step 3: Run the Client
 
