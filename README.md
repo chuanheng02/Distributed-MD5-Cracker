@@ -6,16 +6,16 @@
 
 
 ## 📖 Overview
-This project implements a **Distributed System** to crack MD5 password hashes. [cite_start]Unlike a standard standalone program, this system utilizes **Java RMI (Remote Method Invocation)** to split the heavy computational workload across **three physical machines** per cluster [cite: 5-6, 19].
+This project implements a **Distributed System** to crack MD5 password hashes. Unlike a standard standalone program, this system utilizes **Java RMI (Remote Method Invocation)** to split the heavy computational workload across **three physical machines** per cluster.
 
-To accelerate data collection and performance evaluation, this project utilizes **two parallel 3-PC clusters**. [cite_start]This allows for simultaneous execution of different test cases to efficiently measure the system's scalability [cite: 81-87].
+To accelerate data collection and performance evaluation, this project utilizes **two parallel 3-PC clusters**. This allows for simultaneous execution of different test cases to efficiently measure the system's scalability.
 
 ### Key Features
 * **3-PC Architecture:** Fully distributed setup verifying "True Parallelism" across physical hardware.
-* [cite_start]**Static Search-Space Partitioning:** The Client automatically calculates and assigns non-overlapping search ranges (e.g., first character '!' to 'M' for Server 1) to ensure no redundant work [cite: 60-64].
-* [cite_start]**Remote Termination:** If one server finds the password, the Client immediately triggers a remote stop signal to all other servers to save resources[cite: 30, 137].
+* **Static Search-Space Partitioning:** The Client automatically calculates and assigns non-overlapping search ranges (e.g., first character '!' to 'M' for Server 1) to ensure no redundant work.
+* **Remote Termination:** If one server finds the password, the Client immediately triggers a remote stop signal to all other servers to save resources.
 * **Real-time Progress Monitoring:** The client polls servers for progress updates and displays a real-time ETA and percentage complete.
-* [cite_start]**Performance Logging:** Servers generate detailed `server_x.log` files tracking thread start/stop times and activity [cite: 70-75].
+* **Performance Logging:** Servers generate detailed `server_x.log` files tracking thread start/stop times and activity.
 
 ---
 
@@ -99,7 +99,7 @@ Follow the on-screen prompts to input the MD5 hash, password length, threads per
 ---
 
 ## 📊 Performance Evaluation
-[cite_start]This setup allows for the calculation of **Speedup** and **Efficiency** metrics by comparing the execution time of the 3-PC Distributed setup against a Single-PC baseline, as required by the assignment guidelines [cite: 90-92].
+This setup allows for the calculation of **Speedup** and **Efficiency** metrics by comparing the execution time of the 3-PC Distributed setup against a Single-PC baseline, as required by the assignment guidelines.
 
 * **Speedup ($S$):**
   $$S = \frac{T_{1}}{T_{n}}$$
