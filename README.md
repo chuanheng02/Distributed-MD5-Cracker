@@ -1,9 +1,3 @@
-Here is a professionally structured and enhanced `README.md` for your project. I have organized your specific network configurations into a clear "Testbed Environment" section and refined the execution commands for clarity.
-
-You can copy and paste the markdown code below directly into your GitHub repository.
-
----
-
 # Distributed MD5 Cracker
 
 **A distributed, multithreaded MD5 brute-force password search system using Java RMI.** *Developed for TMN4013 Distributed Systems Assignment 2 (2025/2026).*
