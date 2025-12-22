@@ -45,6 +45,14 @@ To expedite the assignment's performance analysis, two identical distributed env
 * **Firewalls must be disabled** (or port 1099 allowed).
 * **Important:** Before compiling `SearchClient.java`, you must manually update the `SERVER_1_IP` and `SERVER_2_IP` variables in the code to match the Cluster you are currently testing.
 
+### 0. Compilation
+Before running the system, compile all Java files from the source directory on all machines:
+```bash
+javac *.java
+
+```
+
+
 ### Step 1: Start Server 1
 Open a terminal on the designated Server 1 machine (e.g., Machine 3 or 5) and run:
 ```bash
@@ -96,7 +104,3 @@ Follow the on-screen prompts to input the MD5 hash, password length, threads per
 * **Chong Ming Zin** (<83489>)
 * **Xavier Liong Zhi Hao** (<86709>)
 * **Alif Aiman Bin Othman** (<83162>)
-
-```
-
-```
