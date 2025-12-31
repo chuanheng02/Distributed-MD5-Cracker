@@ -8,24 +8,62 @@ public class SearchClient {
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static volatile boolean finished = false;
 
+    // --- HELPER: ROBUST INPUT READER ---
+    // Checks if input is a valid number within range (min-max)
+    private static int readInt(Scanner scanner, String prompt, int min, int max) {
+        int input;
+        while (true) {
+            System.out.print(prompt);
+            if (scanner.hasNextInt()) {
+                input = scanner.nextInt();
+                scanner.nextLine(); // Consume newline
+                if (input >= min && input <= max) {
+                    return input;
+                } else {
+                    System.out.println(">> Error: Please enter a number between " + min + " and " + max + ".");
+                }
+            } else {
+                System.out.println(">> Error: Invalid input. Please enter a numeric value.");
+                scanner.next(); // Clear invalid input
+            }
+        }
+    }
+    // -----------------------------------
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         try {
             // --- IPS ---
-            String SERVER_1_IP = "10.87.145.208"; 
-            String SERVER_2_IP = "10.87.154.138"; 
+            String SERVER_1_IP = "10.87.159.58"; 
+            String SERVER_2_IP = "10.87.146.145"; 
             // -----------
 
             System.out.println("--- Distributed Password Cracker Client ---");
+            
+            // 1. Get Hash (Check for empty input)
             System.out.print("Enter MD5 Hash: ");
-            String hash = scanner.nextLine().trim();
-            System.out.print("Enter Password Length: ");
-            int pwdLen = scanner.nextInt();
-            System.out.print("Enter Threads per Server: ");
-            int threads = scanner.nextInt();
-            System.out.print("Enter Number of Servers (1 or 2): ");
-            int numServers = scanner.nextInt();
+            String rawHash = scanner.nextLine().trim();
+            while (rawHash.isEmpty()) { 
+                System.out.print(">> Error: Hash cannot be empty. Enter MD5 Hash: ");
+                rawHash = scanner.nextLine().trim();
+            }
+
+            // 2. Validate Password Length (2-6)
+            int rawPwdLen = readInt(scanner, "Enter Password Length: ", 2, 6);
+
+            // 3. Validate Threads per Server (1-10)
+            int rawThreads = readInt(scanner, "Enter Threads per Server: ", 1, 10);
+
+            // 4. Validate Number of Servers (1 or 2)
+            int numServers = readInt(scanner, "Enter Number of Servers (1 or 2): ", 1, 2);
+
+            // --- FIX FOR LAMBDA ERROR ---
+            // Create final copies so threads can use them safely
+            final String hash = rawHash;
+            final int pwdLen = rawPwdLen;
+            final int threads = rawThreads;
+            // ----------------------------
 
             System.out.println("Connecting to Server 1...");
             SearchInterface server1 = (SearchInterface) Naming.lookup("rmi://" + SERVER_1_IP + "/server_1");
@@ -52,7 +90,7 @@ public class SearchClient {
             System.out.println("--------------------------------------------------------------------------------");
 
             final String[] result = {null};
-            final int[] winningServer = {0}; // 1 or 2
+            final int[] winningServer = {0}; 
 
             // Thread 1
             Thread t1 = new Thread(() -> {
@@ -111,15 +149,12 @@ public class SearchClient {
             // --- REPORTING & STOPPING ---
             System.out.println("\n--------------------------------------------------------------------------------");
             long endTimeMillis = System.currentTimeMillis();
-            LocalDateTime endDateTime = LocalDateTime.now();
-
+            
             if (result[0] != null) {
                 // STOP THE LOSERS
                 if (winningServer[0] == 1) {
-                     // Server 1 won, tell Server 2
                      if (server2 != null) try { server2.stopSearch("Server 1"); } catch (Exception e) {}
                 } else if (winningServer[0] == 2) {
-                     // Server 2 won, tell Server 1
                      try { server1.stopSearch("Server 2"); } catch (Exception e) {}
                 }
 
@@ -131,6 +166,7 @@ public class SearchClient {
             }
             
             System.out.println("Total Duration  : " + (endTimeMillis - startTimeMillis) + " ms");
+            // (Log writing block removed)
 
         } catch (Exception e) {
             System.out.println("Client Error: " + e.getMessage());
