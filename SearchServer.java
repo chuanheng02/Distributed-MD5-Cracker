@@ -18,10 +18,11 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
     private volatile String foundResult = null; 
     private List<BruteForceThread> activeThreads = new ArrayList<>();
     
-    // --- DYNAMIC LOG FILENAME ---
-    // Default is server_log.txt, but main() will change this to server_1_log.txt, etc.
+    // --- Track Start Time for Rate Calculation ---
+    private volatile long searchStartTime = 0;
+    // ---------------------------------------------
+
     public static String logFileName = "server_log.txt"; 
-    // ----------------------------
 
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
@@ -29,18 +30,38 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         super();
     }
 
-    // Updated Helper: Uses the dynamic 'logFileName'
     private void logToFile(String message) {
         try (FileWriter fw = new FileWriter(logFileName, true);
              PrintWriter pw = new PrintWriter(fw)) {
-            
             String timestamp = LocalDateTime.now().format(dtf);
             pw.println("[" + timestamp + "] " + message);
-            
         } catch (IOException e) {
             System.out.println(">> [ERROR] Could not write to " + logFileName);
         }
     }
+
+    private static void logException(String prefix, Exception e) {
+        try (FileWriter fw = new FileWriter(logFileName, true);
+             PrintWriter pw = new PrintWriter(fw)) {
+            String timestamp = LocalDateTime.now().format(dtf);
+            pw.println("[" + timestamp + "] [EXCEPTION] " + prefix + ": " + e.toString());
+        } catch (IOException io) {}
+    }
+
+    // --- HELPER: Calculate Rate ---
+    private String getRateStats() {
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - searchStartTime;
+        long total = totalChecked.get();
+        
+        long rate = 0;
+        if (duration > 0) {
+            rate = (total * 1000) / duration; // Convert ms to seconds
+        }
+        
+        return String.format("Total Checked: %,d | Duration: %d ms | Rate: %,d attempts/sec", total, duration, rate);
+    }
+    // ------------------------------
 
     @Override
     public long getProgress() throws RemoteException {
@@ -53,23 +74,46 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
 
     public synchronized void foundPassword(String result) {
         this.foundResult = result;
-        String msg = ">>> PASSWORD FOUND ON THIS SERVER! Result: " + result;
-        System.out.println("\n" + msg + "\n");
-        logToFile(msg); 
+        
+        String stats = getRateStats();
+        
+        // --- SPLIT INTO TWO LINES FOR SCREENSHOT ---
+        String line1 = ">>> SUCCESS: Password found! Result details: " + result;
+        String line2 = ">>> Search Stats: " + stats;
+        
+        System.out.println("\n" + line1);
+        System.out.println(line2 + "\n");
+        
+        logToFile(line1); 
+        logToFile(line2); 
+        // -------------------------------------------
+        
         terminateThreads();
     }
 
     @Override
     public void stopSearch(String winnerInfo) throws RemoteException {
         if (!keepSearching) return; 
-        String msg = ">>> Search Stopped. Password found at: " + winnerInfo;
-        System.out.println("\n" + msg + "\n");
-        logToFile(msg); 
+        
+        String stats = getRateStats();
+        
+        // --- SPLIT INTO TWO LINES FOR SCREENSHOT ---
+        String line1 = ">>> STOP: Search halted. Password found remotely at: " + winnerInfo;
+        String line2 = ">>> Search Stats: " + stats;
+        
+        System.out.println("\n" + line1);
+        System.out.println(line2 + "\n");
+        
+        logToFile(line1); 
+        logToFile(line2); 
+        // -------------------------------------------
+        
         terminateThreads();
     }
 
     private void terminateThreads() {
         keepSearching = false;
+        logToFile("Thread Stop Signal Sent. Stopping " + activeThreads.size() + " active threads.");
         for (BruteForceThread t : activeThreads) {
             t.stopRunning();
         }
@@ -77,11 +121,16 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
 
     @Override
     public String search(String targetHash, long start, long end, int numThreads, int length) throws RemoteException {
-        String startMsg = String.format("Starting search | Length: %d | Range: %d-%d | Threads: %d", length, start, end, numThreads);
+        String startMsg = String.format("Request Received. Starting new search. Length: %d | Total Range: %d-%d | Threads to Create: %d", length, start, end, numThreads);
         System.out.println(startMsg);
+        logToFile("---------------------------------------------------------------");
         logToFile(startMsg);
         
+        // --- Reset Stats ---
         totalChecked.set(0);
+        searchStartTime = System.currentTimeMillis(); 
+        // -------------------
+
         keepSearching = true;
         foundResult = null;
         activeThreads.clear();
@@ -89,14 +138,24 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
         long totalRange = end - start + 1;
         long chunk = totalRange / numThreads;
         
-        for (int i = 0; i < numThreads; i++) {
-            long tStart = start + (i * chunk);
-            long tEnd = (i == numThreads - 1) ? end : (tStart + chunk - 1); 
-            if (tStart > end) break;
+        try {
+            for (int i = 0; i < numThreads; i++) {
+                long tStart = start + (i * chunk);
+                long tEnd = (i == numThreads - 1) ? end : (tStart + chunk - 1); 
+                
+                if (tStart > end) break;
 
-            BruteForceThread t = new BruteForceThread(i, targetHash, tStart, tEnd, length, this);
-            activeThreads.add(t);
-            t.start();
+                BruteForceThread t = new BruteForceThread(i, targetHash, tStart, tEnd, length, this);
+                activeThreads.add(t);
+                
+                String threadLog = String.format("Thread-%d Created. Assigned Range: %d-%d. Status: STARTED.", i, tStart, tEnd);
+                logToFile(threadLog);
+                
+                t.start();
+            }
+        } catch (Exception e) {
+            logException("Error during thread creation", e);
+            throw new RemoteException("Thread creation failed", e);
         }
 
         try {
@@ -113,7 +172,10 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
                     }
                 }
             }
-        } catch (InterruptedException e) { e.printStackTrace(); }
+        } catch (InterruptedException e) { 
+            logException("Server Interrupted", e);
+            e.printStackTrace(); 
+        }
 
         return foundResult;
     }
@@ -125,28 +187,26 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
             String serverName = "server_1"; 
             if (args.length > 0) serverName = args[0];
 
-            // --- SET DYNAMIC LOG NAME ---
-            // This updates the static variable so the log matches the server name
             logFileName = serverName + "_log.txt";
-            // ----------------------------
 
             System.setProperty("java.rmi.server.hostname", System.getProperty("java.rmi.server.hostname"));
             Naming.rebind(serverName, new SearchServer());
             
-            String msg = "Server [" + serverName + "] is ready.";
+            String msg = "Server [" + serverName + "] is ready. Logging to: " + logFileName;
             System.out.println(msg);
             
-            // Log startup
             try (FileWriter fw = new FileWriter(logFileName, true);
                  PrintWriter pw = new PrintWriter(fw)) {
                 DateTimeFormatter dtfStart = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-                pw.println("--------------------------------------------------");
-                pw.println("[" + LocalDateTime.now().format(dtfStart) + "] " + msg);
+                pw.println("===============================================================");
+                pw.println("[" + LocalDateTime.now().format(dtfStart) + "] SERVER STARTUP: " + msg);
+                pw.println("===============================================================");
             } catch (Exception e) {}
 
         } catch (Exception e) {
             System.out.println("Server Error: " + e.getMessage());
             e.printStackTrace();
+            logException("Main Server Crash", e);
         }
     }
 }

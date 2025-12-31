@@ -1,2 +1,0 @@
-[2025-12-31 15:27:38] Starting search | Length: 2 | Range: 47-94 | Threads: 5
-[2025-12-31 15:27:38] >>> PASSWORD FOUND ON THIS SERVER! Result: Password: Uj, ThreadID: 0, Time: 0ms
