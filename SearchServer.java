@@ -192,7 +192,7 @@ public class SearchServer extends UnicastRemoteObject implements SearchInterface
             System.setProperty("java.rmi.server.hostname", System.getProperty("java.rmi.server.hostname"));
             Naming.rebind(serverName, new SearchServer());
             
-            String msg = "Server [" + serverName + "] is ready. Logging to: " + logFileName;
+            String msg = "Server [" + serverName + "] is ready.";
             System.out.println(msg);
             
             try (FileWriter fw = new FileWriter(logFileName, true);
