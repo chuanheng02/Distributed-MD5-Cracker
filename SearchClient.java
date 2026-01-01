@@ -35,7 +35,7 @@ public class SearchClient {
 
         try {
             // --- IPS ---
-            String SERVER_1_IP = "10.87.159.58"; 
+            String SERVER_1_IP = "192.168.1.6"; 
             String SERVER_2_IP = "10.87.146.145"; 
             // -----------
 
