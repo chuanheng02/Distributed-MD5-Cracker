@@ -9,7 +9,6 @@ public class SearchClient {
     private static volatile boolean finished = false;
 
     // --- HELPER: ROBUST INPUT READER ---
-    // Checks if input is a valid number within range (min-max)
     private static int readInt(Scanner scanner, String prompt, int min, int max) {
         int input;
         while (true) {
@@ -24,7 +23,7 @@ public class SearchClient {
                 }
             } else {
                 System.out.println(">> Error: Invalid input. Please enter a numeric value.");
-                scanner.next(); // Clear invalid input
+                scanner.next(); 
             }
         }
     }
@@ -41,7 +40,7 @@ public class SearchClient {
 
             System.out.println("--- Distributed Password Cracker Client ---");
             
-            // 1. Get Hash (Check for empty input)
+            // 1. Get Hash
             System.out.print("Enter MD5 Hash: ");
             String rawHash = scanner.nextLine().trim();
             while (rawHash.isEmpty()) { 
@@ -49,21 +48,20 @@ public class SearchClient {
                 rawHash = scanner.nextLine().trim();
             }
 
-            // 2. Validate Password Length (2-6)
+            // 2. Validate Password Length
             int rawPwdLen = readInt(scanner, "Enter Password Length: ", 2, 6);
 
-            // 3. Validate Threads per Server (1-10)
+            // 3. Validate Threads per Server
             int rawThreads = readInt(scanner, "Enter Threads per Server: ", 1, 10);
 
-            // 4. Validate Number of Servers (1 or 2)
-            int numServers = readInt(scanner, "Enter Number of Servers (1 or 2): ", 1, 2);
+            // 4. Validate Number of Servers
+            int numServers = readInt(scanner, "Enter Number of Servers: ", 1, 2);
 
-            // --- FIX FOR LAMBDA ERROR ---
-            // Create final copies so threads can use them safely
+            // --- FINAL COPIES FOR THREAD SAFETY ---
             final String hash = rawHash;
             final int pwdLen = rawPwdLen;
             final int threads = rawThreads;
-            // ----------------------------
+            // --------------------------------------
 
             System.out.println("Connecting to Server 1...");
             SearchInterface server1 = (SearchInterface) Naming.lookup("rmi://" + SERVER_1_IP + "/server_1");
@@ -97,7 +95,10 @@ public class SearchClient {
                 try {
                     String res = server1.search(hash, s1Start, s1End, threads, pwdLen);
                     if (res != null) { result[0] = res; winningServer[0] = 1; finished = true; }
-                } catch (Exception e) {}
+                } catch (Exception e) {
+                    // --- NEW ERROR HANDLING ---
+                    System.out.println("\n>> [CRITICAL ERROR] Server 1 failed or disconnected: " + e.getMessage());
+                }
             });
             t1.start();
 
@@ -109,7 +110,10 @@ public class SearchClient {
                     try {
                         String res = s2Ref.search(hash, s2Start, s2End, threads, pwdLen);
                         if (res != null) { result[0] = res; winningServer[0] = 2; finished = true; }
-                    } catch (Exception e) {}
+                    } catch (Exception e) {
+                        // --- NEW ERROR HANDLING ---
+                        System.out.println("\n>> [CRITICAL ERROR] Server 2 failed or disconnected: " + e.getMessage());
+                    }
                 });
                 t2.start();
             }
@@ -141,6 +145,7 @@ public class SearchClient {
                         System.out.print(String.format("\r[%.4f%%] Tried: %,d (Rate: %,d/s) (ETA: %s)   ", percentage, totalTried, rate, etaString));
                     }
                     
+                    // Stop if threads are dead/finished
                     if (!t1.isAlive() && (t2 == null || !t2.isAlive())) finished = true;
 
                 } catch (InterruptedException e) { break; }
@@ -166,7 +171,6 @@ public class SearchClient {
             }
             
             System.out.println("Total Duration  : " + (endTimeMillis - startTimeMillis) + " ms");
-            // (Log writing block removed)
 
         } catch (Exception e) {
             System.out.println("Client Error: " + e.getMessage());
