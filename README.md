@@ -53,7 +53,8 @@ To expedite the assignment's performance analysis, two identical distributed env
 * **Important:** Before compiling `SearchClient.java`, you must manually update the `SERVER_1_IP` and `SERVER_2_IP` variables in the code to match the Cluster you are currently testing.
 
 ### Step 0. Compilation
-Before running the system, compile all Java files from the source directory on all machines:
+First, change the ip address of machine 1 and machine 2 in the code SearchClient.java (line 37 & 38) to match the Cluster you are currently testing.
+Then, compile all Java files from the source directory on all machines:
 ```bash
 javac *.java
 
@@ -93,6 +94,7 @@ Perform these steps on the designated Server 2 machine:
     ```
 
 ### Step 3: Run the Client
+
 
 Open a terminal on the designated Client machine (e.g., Machine 1 or 2) and run:
 
