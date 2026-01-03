@@ -1,0 +1,1116 @@
+===============================================================
+[2025-12-31 16:04:20] SERVER STARTUP: Server [server_1] is ready. Logging to: server_1_log.txt
+===============================================================
+===============================================================
+[2025-12-31 16:05:11] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+===============================================================
+[2025-12-31 16:05:38] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+[2025-12-31 16:06:38] ---------------------------------------------------------------
+[2025-12-31 16:06:38] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 1
+[2025-12-31 16:06:38] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2025-12-31 16:06:39] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:06:39] >>> Search Stats: Total Checked: 4,465 | Duration: 1097 ms | Rate: 4,070 attempts/sec
+[2025-12-31 16:06:39] Thread Stop Signal Sent. Stopping 1 active threads.
+[2025-12-31 16:07:58] ---------------------------------------------------------------
+[2025-12-31 16:07:58] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 2
+[2025-12-31 16:07:58] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2025-12-31 16:07:58] Thread-1 Created. Assigned Range: 23-46. Status: STARTED.
+[2025-12-31 16:07:59] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:07:59] >>> Search Stats: Total Checked: 4,465 | Duration: 1157 ms | Rate: 3,859 attempts/sec
+[2025-12-31 16:07:59] Thread Stop Signal Sent. Stopping 2 active threads.
+[2025-12-31 16:08:22] ---------------------------------------------------------------
+[2025-12-31 16:08:22] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 3
+[2025-12-31 16:08:22] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2025-12-31 16:08:22] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2025-12-31 16:08:22] Thread-2 Created. Assigned Range: 30-46. Status: STARTED.
+[2025-12-31 16:08:23] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:08:23] >>> Search Stats: Total Checked: 4,465 | Duration: 1010 ms | Rate: 4,420 attempts/sec
+[2025-12-31 16:08:23] Thread Stop Signal Sent. Stopping 3 active threads.
+[2025-12-31 16:08:40] ---------------------------------------------------------------
+[2025-12-31 16:08:40] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 4
+[2025-12-31 16:08:40] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2025-12-31 16:08:40] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2025-12-31 16:08:40] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2025-12-31 16:08:40] Thread-3 Created. Assigned Range: 33-46. Status: STARTED.
+[2025-12-31 16:08:41] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:08:41] >>> Search Stats: Total Checked: 4,465 | Duration: 970 ms | Rate: 4,603 attempts/sec
+[2025-12-31 16:08:41] Thread Stop Signal Sent. Stopping 4 active threads.
+[2025-12-31 16:08:58] ---------------------------------------------------------------
+[2025-12-31 16:08:58] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 5
+[2025-12-31 16:08:58] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2025-12-31 16:08:58] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2025-12-31 16:08:58] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2025-12-31 16:08:58] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2025-12-31 16:08:58] Thread-4 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:08:59] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:08:59] >>> Search Stats: Total Checked: 4,465 | Duration: 1147 ms | Rate: 3,892 attempts/sec
+[2025-12-31 16:08:59] Thread Stop Signal Sent. Stopping 5 active threads.
+[2025-12-31 16:09:14] ---------------------------------------------------------------
+[2025-12-31 16:09:14] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 6
+[2025-12-31 16:09:14] Thread-0 Created. Assigned Range: 0-6. Status: STARTED.
+[2025-12-31 16:09:14] Thread-1 Created. Assigned Range: 7-13. Status: STARTED.
+[2025-12-31 16:09:14] Thread-2 Created. Assigned Range: 14-20. Status: STARTED.
+[2025-12-31 16:09:14] Thread-3 Created. Assigned Range: 21-27. Status: STARTED.
+[2025-12-31 16:09:14] Thread-4 Created. Assigned Range: 28-34. Status: STARTED.
+[2025-12-31 16:09:14] Thread-5 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:09:15] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:09:15] >>> Search Stats: Total Checked: 4,465 | Duration: 1027 ms | Rate: 4,347 attempts/sec
+[2025-12-31 16:09:15] Thread Stop Signal Sent. Stopping 6 active threads.
+[2025-12-31 16:09:24] ---------------------------------------------------------------
+[2025-12-31 16:09:24] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 7
+[2025-12-31 16:09:24] Thread-0 Created. Assigned Range: 0-5. Status: STARTED.
+[2025-12-31 16:09:24] Thread-1 Created. Assigned Range: 6-11. Status: STARTED.
+[2025-12-31 16:09:24] Thread-2 Created. Assigned Range: 12-17. Status: STARTED.
+[2025-12-31 16:09:24] Thread-3 Created. Assigned Range: 18-23. Status: STARTED.
+[2025-12-31 16:09:24] Thread-4 Created. Assigned Range: 24-29. Status: STARTED.
+[2025-12-31 16:09:24] Thread-5 Created. Assigned Range: 30-35. Status: STARTED.
+[2025-12-31 16:09:24] Thread-6 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:09:25] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:09:25] >>> Search Stats: Total Checked: 4,465 | Duration: 1127 ms | Rate: 3,961 attempts/sec
+[2025-12-31 16:09:25] Thread Stop Signal Sent. Stopping 7 active threads.
+[2025-12-31 16:10:10] ---------------------------------------------------------------
+[2025-12-31 16:10:10] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 8
+[2025-12-31 16:10:10] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:10:10] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:10:10] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:10:10] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:10:10] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:10:10] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:10:10] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:10:10] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:10:11] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:10:11] >>> Search Stats: Total Checked: 4,465 | Duration: 1056 ms | Rate: 4,228 attempts/sec
+[2025-12-31 16:10:11] Thread Stop Signal Sent. Stopping 8 active threads.
+[2025-12-31 16:10:21] ---------------------------------------------------------------
+[2025-12-31 16:10:21] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 9
+[2025-12-31 16:10:21] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:10:21] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:10:21] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:10:21] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:10:21] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:10:21] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:10:21] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:10:21] Thread-7 Created. Assigned Range: 35-39. Status: STARTED.
+[2025-12-31 16:10:21] Thread-8 Created. Assigned Range: 40-46. Status: STARTED.
+[2025-12-31 16:10:22] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:10:22] >>> Search Stats: Total Checked: 4,465 | Duration: 1032 ms | Rate: 4,326 attempts/sec
+[2025-12-31 16:10:22] Thread Stop Signal Sent. Stopping 9 active threads.
+[2025-12-31 16:10:31] ---------------------------------------------------------------
+[2025-12-31 16:10:31] Request Received. Starting new search. Length: 2 | Total Range: 0-46 | Threads to Create: 10
+[2025-12-31 16:10:31] Thread-0 Created. Assigned Range: 0-3. Status: STARTED.
+[2025-12-31 16:10:31] Thread-1 Created. Assigned Range: 4-7. Status: STARTED.
+[2025-12-31 16:10:31] Thread-2 Created. Assigned Range: 8-11. Status: STARTED.
+[2025-12-31 16:10:31] Thread-3 Created. Assigned Range: 12-15. Status: STARTED.
+[2025-12-31 16:10:31] Thread-4 Created. Assigned Range: 16-19. Status: STARTED.
+[2025-12-31 16:10:31] Thread-5 Created. Assigned Range: 20-23. Status: STARTED.
+[2025-12-31 16:10:31] Thread-6 Created. Assigned Range: 24-27. Status: STARTED.
+[2025-12-31 16:10:31] Thread-7 Created. Assigned Range: 28-31. Status: STARTED.
+[2025-12-31 16:10:31] Thread-8 Created. Assigned Range: 32-35. Status: STARTED.
+[2025-12-31 16:10:31] Thread-9 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:10:32] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:10:32] >>> Search Stats: Total Checked: 4,465 | Duration: 1003 ms | Rate: 4,451 attempts/sec
+[2025-12-31 16:10:32] Thread Stop Signal Sent. Stopping 10 active threads.
+[2025-12-31 16:11:06] ---------------------------------------------------------------
+[2025-12-31 16:11:06] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 1
+[2025-12-31 16:11:06] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2025-12-31 16:11:06] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 9ms
+[2025-12-31 16:11:06] >>> Search Stats: Total Checked: 0 | Duration: 13 ms | Rate: 0 attempts/sec
+[2025-12-31 16:11:06] Thread Stop Signal Sent. Stopping 1 active threads.
+[2025-12-31 16:11:26] ---------------------------------------------------------------
+[2025-12-31 16:11:26] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 2
+[2025-12-31 16:11:26] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2025-12-31 16:11:26] Thread-1 Created. Assigned Range: 23-46. Status: STARTED.
+[2025-12-31 16:11:26] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 11ms
+[2025-12-31 16:11:26] >>> Search Stats: Total Checked: 0 | Duration: 12 ms | Rate: 0 attempts/sec
+[2025-12-31 16:11:26] Thread Stop Signal Sent. Stopping 2 active threads.
+[2025-12-31 16:11:50] ---------------------------------------------------------------
+[2025-12-31 16:11:50] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 3
+[2025-12-31 16:11:50] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2025-12-31 16:11:50] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2025-12-31 16:11:50] Thread-2 Created. Assigned Range: 30-46. Status: STARTED.
+[2025-12-31 16:11:50] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 6ms
+[2025-12-31 16:11:50] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2025-12-31 16:11:50] Thread Stop Signal Sent. Stopping 3 active threads.
+[2025-12-31 16:12:00] ---------------------------------------------------------------
+[2025-12-31 16:12:00] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 4
+[2025-12-31 16:12:00] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2025-12-31 16:12:00] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2025-12-31 16:12:00] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2025-12-31 16:12:00] Thread-3 Created. Assigned Range: 33-46. Status: STARTED.
+[2025-12-31 16:12:00] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 7ms
+[2025-12-31 16:12:00] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2025-12-31 16:12:00] Thread Stop Signal Sent. Stopping 4 active threads.
+[2025-12-31 16:12:21] ---------------------------------------------------------------
+[2025-12-31 16:12:21] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 5
+[2025-12-31 16:12:21] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2025-12-31 16:12:21] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2025-12-31 16:12:21] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2025-12-31 16:12:21] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2025-12-31 16:12:21] Thread-4 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:12:21] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 11ms
+[2025-12-31 16:12:21] >>> Search Stats: Total Checked: 0 | Duration: 12 ms | Rate: 0 attempts/sec
+[2025-12-31 16:12:21] Thread Stop Signal Sent. Stopping 5 active threads.
+[2025-12-31 16:12:31] ---------------------------------------------------------------
+[2025-12-31 16:12:31] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 6
+[2025-12-31 16:12:31] Thread-0 Created. Assigned Range: 0-6. Status: STARTED.
+[2025-12-31 16:12:31] Thread-1 Created. Assigned Range: 7-13. Status: STARTED.
+[2025-12-31 16:12:31] Thread-2 Created. Assigned Range: 14-20. Status: STARTED.
+[2025-12-31 16:12:31] Thread-3 Created. Assigned Range: 21-27. Status: STARTED.
+[2025-12-31 16:12:31] Thread-4 Created. Assigned Range: 28-34. Status: STARTED.
+[2025-12-31 16:12:31] Thread-5 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:12:31] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 9ms
+[2025-12-31 16:12:31] >>> Search Stats: Total Checked: 0 | Duration: 10 ms | Rate: 0 attempts/sec
+[2025-12-31 16:12:31] Thread Stop Signal Sent. Stopping 6 active threads.
+[2025-12-31 16:12:41] ---------------------------------------------------------------
+[2025-12-31 16:12:41] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 7
+[2025-12-31 16:12:41] Thread-0 Created. Assigned Range: 0-5. Status: STARTED.
+[2025-12-31 16:12:41] Thread-1 Created. Assigned Range: 6-11. Status: STARTED.
+[2025-12-31 16:12:41] Thread-2 Created. Assigned Range: 12-17. Status: STARTED.
+[2025-12-31 16:12:41] Thread-3 Created. Assigned Range: 18-23. Status: STARTED.
+[2025-12-31 16:12:41] Thread-4 Created. Assigned Range: 24-29. Status: STARTED.
+[2025-12-31 16:12:41] Thread-5 Created. Assigned Range: 30-35. Status: STARTED.
+[2025-12-31 16:12:41] Thread-6 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:12:41] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 6ms
+[2025-12-31 16:12:41] >>> Search Stats: Total Checked: 0 | Duration: 7 ms | Rate: 0 attempts/sec
+[2025-12-31 16:12:41] Thread Stop Signal Sent. Stopping 7 active threads.
+[2025-12-31 16:12:50] ---------------------------------------------------------------
+[2025-12-31 16:12:50] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 8
+[2025-12-31 16:12:50] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:12:50] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:12:50] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:12:50] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:12:50] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:12:50] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:12:50] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:12:50] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:12:50] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 10ms
+[2025-12-31 16:12:50] >>> Search Stats: Total Checked: 45,125 | Duration: 11 ms | Rate: 4,102,272 attempts/sec
+[2025-12-31 16:12:50] Thread Stop Signal Sent. Stopping 8 active threads.
+[2025-12-31 16:12:59] ---------------------------------------------------------------
+[2025-12-31 16:12:59] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 9
+[2025-12-31 16:12:59] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:12:59] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:12:59] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:12:59] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:12:59] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:12:59] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:12:59] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:12:59] Thread-7 Created. Assigned Range: 35-39. Status: STARTED.
+[2025-12-31 16:12:59] Thread-8 Created. Assigned Range: 40-46. Status: STARTED.
+[2025-12-31 16:12:59] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 8ms
+[2025-12-31 16:12:59] >>> Search Stats: Total Checked: 45,125 | Duration: 9 ms | Rate: 5,013,888 attempts/sec
+[2025-12-31 16:12:59] Thread Stop Signal Sent. Stopping 9 active threads.
+[2025-12-31 16:13:07] ---------------------------------------------------------------
+[2025-12-31 16:13:07] Request Received. Starting new search. Length: 3 | Total Range: 0-46 | Threads to Create: 10
+[2025-12-31 16:13:07] Thread-0 Created. Assigned Range: 0-3. Status: STARTED.
+[2025-12-31 16:13:07] Thread-1 Created. Assigned Range: 4-7. Status: STARTED.
+[2025-12-31 16:13:07] Thread-2 Created. Assigned Range: 8-11. Status: STARTED.
+[2025-12-31 16:13:07] Thread-3 Created. Assigned Range: 12-15. Status: STARTED.
+[2025-12-31 16:13:07] Thread-4 Created. Assigned Range: 16-19. Status: STARTED.
+[2025-12-31 16:13:07] Thread-5 Created. Assigned Range: 20-23. Status: STARTED.
+[2025-12-31 16:13:07] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 1, Time: 2ms
+[2025-12-31 16:13:07] Thread-6 Created. Assigned Range: 24-27. Status: STARTED.
+[2025-12-31 16:13:07] >>> Search Stats: Total Checked: 0 | Duration: 5 ms | Rate: 0 attempts/sec
+[2025-12-31 16:13:07] Thread Stop Signal Sent. Stopping 7 active threads.
+[2025-12-31 16:13:07] Thread-7 Created. Assigned Range: 28-31. Status: STARTED.
+[2025-12-31 16:13:07] Thread-8 Created. Assigned Range: 32-35. Status: STARTED.
+[2025-12-31 16:13:07] Thread-9 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:13:40] ---------------------------------------------------------------
+[2025-12-31 16:13:40] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 1
+[2025-12-31 16:13:40] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2025-12-31 16:13:44] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:13:44] >>> Search Stats: Total Checked: 29,000,000 | Duration: 3705 ms | Rate: 7,827,260 attempts/sec
+[2025-12-31 16:13:44] Thread Stop Signal Sent. Stopping 1 active threads.
+[2025-12-31 16:13:58] ---------------------------------------------------------------
+[2025-12-31 16:13:58] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 2
+[2025-12-31 16:13:58] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2025-12-31 16:13:58] Thread-1 Created. Assigned Range: 23-46. Status: STARTED.
+[2025-12-31 16:13:59] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:13:59] >>> Search Stats: Total Checked: 16,000,000 | Duration: 1024 ms | Rate: 15,625,000 attempts/sec
+[2025-12-31 16:13:59] Thread Stop Signal Sent. Stopping 2 active threads.
+[2025-12-31 16:14:07] ---------------------------------------------------------------
+[2025-12-31 16:14:07] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 3
+[2025-12-31 16:14:07] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2025-12-31 16:14:07] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2025-12-31 16:14:07] Thread-2 Created. Assigned Range: 30-46. Status: STARTED.
+[2025-12-31 16:14:10] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:14:10] >>> Search Stats: Total Checked: 40,296,625 | Duration: 2556 ms | Rate: 15,765,502 attempts/sec
+[2025-12-31 16:14:10] Thread Stop Signal Sent. Stopping 3 active threads.
+[2025-12-31 16:14:17] ---------------------------------------------------------------
+[2025-12-31 16:14:17] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 4
+[2025-12-31 16:14:17] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2025-12-31 16:14:17] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2025-12-31 16:14:17] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2025-12-31 16:14:17] Thread-3 Created. Assigned Range: 33-46. Status: STARTED.
+[2025-12-31 16:14:18] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:14:18] >>> Search Stats: Total Checked: 36,862,250 | Duration: 1342 ms | Rate: 27,468,144 attempts/sec
+[2025-12-31 16:14:18] Thread Stop Signal Sent. Stopping 4 active threads.
+[2025-12-31 16:14:35] ---------------------------------------------------------------
+[2025-12-31 16:14:35] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 5
+[2025-12-31 16:14:35] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2025-12-31 16:14:35] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2025-12-31 16:14:35] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2025-12-31 16:14:35] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2025-12-31 16:14:35] Thread-4 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:14:36] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:14:36] >>> Search Stats: Total Checked: 37,865,500 | Duration: 1185 ms | Rate: 31,954,008 attempts/sec
+[2025-12-31 16:14:36] Thread Stop Signal Sent. Stopping 5 active threads.
+[2025-12-31 16:15:02] ---------------------------------------------------------------
+[2025-12-31 16:15:02] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 6
+[2025-12-31 16:15:02] Thread-0 Created. Assigned Range: 0-6. Status: STARTED.
+[2025-12-31 16:15:02] Thread-1 Created. Assigned Range: 7-13. Status: STARTED.
+[2025-12-31 16:15:02] Thread-2 Created. Assigned Range: 14-20. Status: STARTED.
+[2025-12-31 16:15:02] Thread-3 Created. Assigned Range: 21-27. Status: STARTED.
+[2025-12-31 16:15:02] Thread-4 Created. Assigned Range: 28-34. Status: STARTED.
+[2025-12-31 16:15:02] Thread-5 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:15:04] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:15:04] >>> Search Stats: Total Checked: 40,296,625 | Duration: 2260 ms | Rate: 17,830,365 attempts/sec
+[2025-12-31 16:15:04] Thread Stop Signal Sent. Stopping 6 active threads.
+[2025-12-31 16:15:13] ---------------------------------------------------------------
+[2025-12-31 16:15:13] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 7
+[2025-12-31 16:15:13] Thread-0 Created. Assigned Range: 0-5. Status: STARTED.
+[2025-12-31 16:15:13] Thread-1 Created. Assigned Range: 6-11. Status: STARTED.
+[2025-12-31 16:15:13] Thread-2 Created. Assigned Range: 12-17. Status: STARTED.
+[2025-12-31 16:15:13] Thread-3 Created. Assigned Range: 18-23. Status: STARTED.
+[2025-12-31 16:15:13] Thread-4 Created. Assigned Range: 24-29. Status: STARTED.
+[2025-12-31 16:15:13] Thread-5 Created. Assigned Range: 30-35. Status: STARTED.
+[2025-12-31 16:15:13] Thread-6 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:15:14] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:15:14] >>> Search Stats: Total Checked: 37,865,500 | Duration: 1016 ms | Rate: 37,269,192 attempts/sec
+[2025-12-31 16:15:14] Thread Stop Signal Sent. Stopping 7 active threads.
+[2025-12-31 16:15:24] ---------------------------------------------------------------
+[2025-12-31 16:15:24] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 8
+[2025-12-31 16:15:24] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:15:24] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:15:24] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:15:24] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:15:24] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:15:24] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:15:24] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:15:24] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:15:25] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:15:25] >>> Search Stats: Total Checked: 39,008,125 | Duration: 1281 ms | Rate: 30,451,307 attempts/sec
+[2025-12-31 16:15:25] Thread Stop Signal Sent. Stopping 8 active threads.
+[2025-12-31 16:15:34] ---------------------------------------------------------------
+[2025-12-31 16:15:34] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 9
+[2025-12-31 16:15:34] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:15:34] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:15:34] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:15:34] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:15:34] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:15:34] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:15:34] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:15:34] Thread-7 Created. Assigned Range: 35-39. Status: STARTED.
+[2025-12-31 16:15:34] Thread-8 Created. Assigned Range: 40-46. Status: STARTED.
+[2025-12-31 16:15:35] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:15:35] >>> Search Stats: Total Checked: 40,296,625 | Duration: 1025 ms | Rate: 39,313,780 attempts/sec
+[2025-12-31 16:15:35] Thread Stop Signal Sent. Stopping 9 active threads.
+[2025-12-31 16:15:43] ---------------------------------------------------------------
+[2025-12-31 16:15:43] Request Received. Starting new search. Length: 4 | Total Range: 0-46 | Threads to Create: 10
+[2025-12-31 16:15:43] Thread-0 Created. Assigned Range: 0-3. Status: STARTED.
+[2025-12-31 16:15:43] Thread-1 Created. Assigned Range: 4-7. Status: STARTED.
+[2025-12-31 16:15:43] Thread-2 Created. Assigned Range: 8-11. Status: STARTED.
+[2025-12-31 16:15:43] Thread-3 Created. Assigned Range: 12-15. Status: STARTED.
+[2025-12-31 16:15:43] Thread-4 Created. Assigned Range: 16-19. Status: STARTED.
+[2025-12-31 16:15:43] Thread-5 Created. Assigned Range: 20-23. Status: STARTED.
+[2025-12-31 16:15:43] Thread-6 Created. Assigned Range: 24-27. Status: STARTED.
+[2025-12-31 16:15:43] Thread-7 Created. Assigned Range: 28-31. Status: STARTED.
+[2025-12-31 16:15:43] Thread-8 Created. Assigned Range: 32-35. Status: STARTED.
+[2025-12-31 16:15:43] Thread-9 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:15:44] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:15:44] >>> Search Stats: Total Checked: 37,865,500 | Duration: 1024 ms | Rate: 36,978,027 attempts/sec
+[2025-12-31 16:15:44] Thread Stop Signal Sent. Stopping 10 active threads.
+[2025-12-31 16:16:04] ---------------------------------------------------------------
+[2025-12-31 16:16:04] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 1
+[2025-12-31 16:16:04] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2025-12-31 16:17:56] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:17:56] >>> Search Stats: Total Checked: 897,000,000 | Duration: 111983 ms | Rate: 8,010,144 attempts/sec
+[2025-12-31 16:17:56] Thread Stop Signal Sent. Stopping 1 active threads.
+[2025-12-31 16:18:12] ---------------------------------------------------------------
+[2025-12-31 16:18:12] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 2
+[2025-12-31 16:18:12] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2025-12-31 16:18:12] Thread-1 Created. Assigned Range: 23-46. Status: STARTED.
+[2025-12-31 16:20:12] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:20:12] >>> Search Stats: Total Checked: 2,129,000,000 | Duration: 119960 ms | Rate: 17,747,582 attempts/sec
+[2025-12-31 16:20:12] Thread Stop Signal Sent. Stopping 2 active threads.
+[2025-12-31 16:21:53] ---------------------------------------------------------------
+[2025-12-31 16:21:53] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 3
+[2025-12-31 16:21:53] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2025-12-31 16:21:53] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2025-12-31 16:21:53] Thread-2 Created. Assigned Range: 30-46. Status: STARTED.
+[2025-12-31 16:25:09] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:25:09] >>> Search Stats: Total Checked: 3,828,179,375 | Duration: 195752 ms | Rate: 19,556,272 attempts/sec
+[2025-12-31 16:25:09] Thread Stop Signal Sent. Stopping 3 active threads.
+[2025-12-31 16:25:34] ---------------------------------------------------------------
+[2025-12-31 16:25:34] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 4
+[2025-12-31 16:25:34] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2025-12-31 16:25:34] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2025-12-31 16:25:34] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2025-12-31 16:25:34] Thread-3 Created. Assigned Range: 33-46. Status: STARTED.
+[2025-12-31 16:27:54] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:27:54] >>> Search Stats: Total Checked: 3,801,870,625 | Duration: 140399 ms | Rate: 27,079,043 attempts/sec
+[2025-12-31 16:27:54] Thread Stop Signal Sent. Stopping 4 active threads.
+[2025-12-31 16:28:14] ---------------------------------------------------------------
+[2025-12-31 16:28:14] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 5
+[2025-12-31 16:28:14] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2025-12-31 16:28:14] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2025-12-31 16:28:14] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2025-12-31 16:28:14] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2025-12-31 16:28:14] Thread-4 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:28:39] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:28:39] >>> Search Stats: Total Checked: 924,000,000 | Duration: 24567 ms | Rate: 37,611,429 attempts/sec
+[2025-12-31 16:28:39] Thread Stop Signal Sent. Stopping 5 active threads.
+[2025-12-31 16:30:34] ---------------------------------------------------------------
+[2025-12-31 16:30:34] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 6
+[2025-12-31 16:30:34] Thread-0 Created. Assigned Range: 0-6. Status: STARTED.
+[2025-12-31 16:30:34] Thread-1 Created. Assigned Range: 7-13. Status: STARTED.
+[2025-12-31 16:30:34] Thread-2 Created. Assigned Range: 14-20. Status: STARTED.
+[2025-12-31 16:30:34] Thread-3 Created. Assigned Range: 21-27. Status: STARTED.
+[2025-12-31 16:30:34] Thread-4 Created. Assigned Range: 28-34. Status: STARTED.
+[2025-12-31 16:30:34] Thread-5 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:31:18] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:31:18] >>> Search Stats: Total Checked: 1,963,000,000 | Duration: 44320 ms | Rate: 44,291,516 attempts/sec
+[2025-12-31 16:31:18] Thread Stop Signal Sent. Stopping 6 active threads.
+[2025-12-31 16:31:42] ---------------------------------------------------------------
+[2025-12-31 16:31:42] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 7
+[2025-12-31 16:31:42] Thread-0 Created. Assigned Range: 0-5. Status: STARTED.
+[2025-12-31 16:31:42] Thread-1 Created. Assigned Range: 6-11. Status: STARTED.
+[2025-12-31 16:31:42] Thread-2 Created. Assigned Range: 12-17. Status: STARTED.
+[2025-12-31 16:31:42] Thread-3 Created. Assigned Range: 18-23. Status: STARTED.
+[2025-12-31 16:31:42] Thread-4 Created. Assigned Range: 24-29. Status: STARTED.
+[2025-12-31 16:31:42] Thread-5 Created. Assigned Range: 30-35. Status: STARTED.
+[2025-12-31 16:31:42] Thread-6 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:33:19] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:33:19] >>> Search Stats: Total Checked: 3,653,222,500 | Duration: 96447 ms | Rate: 37,878,031 attempts/sec
+[2025-12-31 16:33:19] Thread Stop Signal Sent. Stopping 7 active threads.
+[2025-12-31 16:33:43] ---------------------------------------------------------------
+[2025-12-31 16:33:43] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 8
+[2025-12-31 16:33:43] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:33:43] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:33:43] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:33:43] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:33:43] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:33:43] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:33:43] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:33:43] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2025-12-31 16:35:36] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:35:36] >>> Search Stats: Total Checked: 3,608,771,875 | Duration: 113152 ms | Rate: 31,893,133 attempts/sec
+[2025-12-31 16:35:36] Thread Stop Signal Sent. Stopping 8 active threads.
+[2025-12-31 16:36:46] ---------------------------------------------------------------
+[2025-12-31 16:36:46] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 9
+[2025-12-31 16:36:46] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2025-12-31 16:36:46] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2025-12-31 16:36:46] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2025-12-31 16:36:46] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2025-12-31 16:36:46] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2025-12-31 16:36:46] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2025-12-31 16:36:46] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2025-12-31 16:36:46] Thread-7 Created. Assigned Range: 35-39. Status: STARTED.
+[2025-12-31 16:36:46] Thread-8 Created. Assigned Range: 40-46. Status: STARTED.
+[2025-12-31 16:37:16] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:37:16] >>> Search Stats: Total Checked: 1,709,000,000 | Duration: 29701 ms | Rate: 57,540,150 attempts/sec
+[2025-12-31 16:37:16] Thread Stop Signal Sent. Stopping 9 active threads.
+[2025-12-31 16:37:49] ---------------------------------------------------------------
+[2025-12-31 16:37:49] Request Received. Starting new search. Length: 5 | Total Range: 0-46 | Threads to Create: 10
+[2025-12-31 16:37:49] Thread-0 Created. Assigned Range: 0-3. Status: STARTED.
+[2025-12-31 16:37:49] Thread-1 Created. Assigned Range: 4-7. Status: STARTED.
+[2025-12-31 16:37:49] Thread-2 Created. Assigned Range: 8-11. Status: STARTED.
+[2025-12-31 16:37:49] Thread-3 Created. Assigned Range: 12-15. Status: STARTED.
+[2025-12-31 16:37:49] Thread-4 Created. Assigned Range: 16-19. Status: STARTED.
+[2025-12-31 16:37:49] Thread-5 Created. Assigned Range: 20-23. Status: STARTED.
+[2025-12-31 16:37:49] Thread-6 Created. Assigned Range: 24-27. Status: STARTED.
+[2025-12-31 16:37:49] Thread-7 Created. Assigned Range: 28-31. Status: STARTED.
+[2025-12-31 16:37:49] Thread-8 Created. Assigned Range: 32-35. Status: STARTED.
+[2025-12-31 16:37:49] Thread-9 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 16:38:55] >>> STOP: Search halted. Password found remotely at: Server 2
+[2025-12-31 16:38:55] >>> Search Stats: Total Checked: 3,433,222,500 | Duration: 65968 ms | Rate: 52,043,756 attempts/sec
+[2025-12-31 16:38:55] Thread Stop Signal Sent. Stopping 10 active threads.
+[2025-12-31 16:40:08] ---------------------------------------------------------------
+[2025-12-31 16:40:08] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 10
+[2025-12-31 16:40:08] Thread-0 Created. Assigned Range: 0-3. Status: STARTED.
+[2025-12-31 16:40:08] Thread-1 Created. Assigned Range: 4-7. Status: STARTED.
+[2025-12-31 16:40:08] Thread-2 Created. Assigned Range: 8-11. Status: STARTED.
+[2025-12-31 16:40:08] Thread-3 Created. Assigned Range: 12-15. Status: STARTED.
+[2025-12-31 16:40:08] Thread-4 Created. Assigned Range: 16-19. Status: STARTED.
+[2025-12-31 16:40:08] Thread-5 Created. Assigned Range: 20-23. Status: STARTED.
+[2025-12-31 16:40:08] Thread-6 Created. Assigned Range: 24-27. Status: STARTED.
+[2025-12-31 16:40:08] Thread-7 Created. Assigned Range: 28-31. Status: STARTED.
+[2025-12-31 16:40:08] Thread-8 Created. Assigned Range: 32-35. Status: STARTED.
+[2025-12-31 16:40:08] Thread-9 Created. Assigned Range: 36-46. Status: STARTED.
+[2025-12-31 17:50:54] ---------------------------------------------------------------
+[2025-12-31 17:50:54] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 1
+[2025-12-31 17:50:54] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2025-12-31 17:55:59] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 6, Time: 4550760ms
+[2025-12-31 17:55:59] >>> Search Stats: Total Checked: 15,105,662,500 | Duration: 305068 ms | Rate: 49,515,722 attempts/sec
+[2025-12-31 17:55:59] Thread Stop Signal Sent. Stopping 1 active threads.
+[2025-12-31 17:57:34] ---------------------------------------------------------------
+[2025-12-31 17:57:34] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 1
+[2025-12-31 17:57:34] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2025-12-31 23:19:43] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 0, Time: 19329401ms
+[2025-12-31 23:19:43] >>> Search Stats: Total Checked: 270,527,378,125 | Duration: 19329402 ms | Rate: 13,995,641 attempts/sec
+[2025-12-31 23:19:43] Thread Stop Signal Sent. Stopping 1 active threads.
+===============================================================
+[2026-01-02 18:24:08] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+===============================================================
+[2026-01-02 18:27:43] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+===============================================================
+[2026-01-02 18:28:23] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+===============================================================
+[2026-01-02 18:30:39] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+===============================================================
+[2026-01-02 18:46:00] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+[2026-01-02 18:46:24] ---------------------------------------------------------------
+[2026-01-02 18:46:24] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 9
+[2026-01-02 18:46:24] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2026-01-02 18:46:24] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2026-01-02 18:46:24] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2026-01-02 18:46:24] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2026-01-02 18:46:24] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2026-01-02 18:46:24] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2026-01-02 18:46:24] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2026-01-02 18:46:24] Thread-7 Created. Assigned Range: 35-39. Status: STARTED.
+[2026-01-02 18:46:24] Thread-8 Created. Assigned Range: 40-46. Status: STARTED.
+[2026-01-02 19:39:17] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 5, Time: 3173525ms
+[2026-01-02 19:39:17] >>> Search Stats: Total Checked: 178,750,000,000 | Duration: 3173530 ms | Rate: 56,325,290 attempts/sec
+[2026-01-02 19:39:17] Thread Stop Signal Sent. Stopping 9 active threads.
+[2026-01-02 19:53:53] ---------------------------------------------------------------
+[2026-01-02 19:53:53] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 8
+[2026-01-02 19:53:53] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2026-01-02 19:53:53] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2026-01-02 19:53:53] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2026-01-02 19:53:53] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2026-01-02 19:53:53] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2026-01-02 19:53:53] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2026-01-02 19:53:53] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2026-01-02 19:53:53] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2026-01-02 20:58:28] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 5, Time: 3874685ms
+[2026-01-02 20:58:28] >>> Search Stats: Total Checked: 184,344,000,000 | Duration: 3874694 ms | Rate: 47,576,402 attempts/sec
+[2026-01-02 20:58:28] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 21:25:19] ---------------------------------------------------------------
+[2026-01-02 21:25:19] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 1
+[2026-01-02 21:25:19] Thread-0 Created. Assigned Range: 0-94. Status: STARTED.
+[2026-01-02 21:25:19] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 0, Time: 0ms
+[2026-01-02 21:25:19] >>> Search Stats: Total Checked: 0 | Duration: 2 ms | Rate: 0 attempts/sec
+[2026-01-02 21:25:19] Thread Stop Signal Sent. Stopping 1 active threads.
+[2026-01-02 21:25:36] ---------------------------------------------------------------
+[2026-01-02 21:25:36] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 2
+[2026-01-02 21:25:36] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2026-01-02 21:25:36] Thread-1 Created. Assigned Range: 47-94. Status: STARTED.
+[2026-01-02 21:25:36] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 1, Time: 0ms
+[2026-01-02 21:25:36] >>> Search Stats: Total Checked: 0 | Duration: 1 ms | Rate: 0 attempts/sec
+[2026-01-02 21:25:36] Thread Stop Signal Sent. Stopping 2 active threads.
+[2026-01-02 21:25:50] ---------------------------------------------------------------
+[2026-01-02 21:25:50] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-02 21:25:50] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-02 21:25:50] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-02 21:25:50] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-02 21:25:50] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 1, Time: 1ms
+[2026-01-02 21:25:50] >>> Search Stats: Total Checked: 2,945 | Duration: 2 ms | Rate: 1,472,500 attempts/sec
+[2026-01-02 21:25:50] Thread Stop Signal Sent. Stopping 3 active threads.
+[2026-01-02 21:26:01] ---------------------------------------------------------------
+[2026-01-02 21:26:01] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 4
+[2026-01-02 21:26:01] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2026-01-02 21:26:01] Thread-1 Created. Assigned Range: 23-45. Status: STARTED.
+[2026-01-02 21:26:01] Thread-2 Created. Assigned Range: 46-68. Status: STARTED.
+[2026-01-02 21:26:01] Thread-3 Created. Assigned Range: 69-94. Status: STARTED.
+[2026-01-02 21:26:01] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 2, Time: 0ms
+[2026-01-02 21:26:01] >>> Search Stats: Total Checked: 4,370 | Duration: 2 ms | Rate: 2,185,000 attempts/sec
+[2026-01-02 21:26:01] Thread Stop Signal Sent. Stopping 4 active threads.
+[2026-01-02 21:26:10] ---------------------------------------------------------------
+[2026-01-02 21:26:10] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 5
+[2026-01-02 21:26:10] Thread-0 Created. Assigned Range: 0-18. Status: STARTED.
+[2026-01-02 21:26:10] Thread-1 Created. Assigned Range: 19-37. Status: STARTED.
+[2026-01-02 21:26:10] Thread-2 Created. Assigned Range: 38-56. Status: STARTED.
+[2026-01-02 21:26:10] Thread-3 Created. Assigned Range: 57-75. Status: STARTED.
+[2026-01-02 21:26:10] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 2, Time: 0ms
+[2026-01-02 21:26:10] Thread-4 Created. Assigned Range: 76-94. Status: STARTED.
+[2026-01-02 21:26:10] >>> Search Stats: Total Checked: 3,610 | Duration: 3 ms | Rate: 1,203,333 attempts/sec
+[2026-01-02 21:26:10] Thread Stop Signal Sent. Stopping 5 active threads.
+[2026-01-02 21:26:18] ---------------------------------------------------------------
+[2026-01-02 21:26:18] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 6
+[2026-01-02 21:26:18] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2026-01-02 21:26:18] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2026-01-02 21:26:18] Thread-2 Created. Assigned Range: 30-44. Status: STARTED.
+[2026-01-02 21:26:18] Thread-3 Created. Assigned Range: 45-59. Status: STARTED.
+[2026-01-02 21:26:18] Thread-4 Created. Assigned Range: 60-74. Status: STARTED.
+[2026-01-02 21:26:18] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 3, Time: 1ms
+[2026-01-02 21:26:18] >>> Search Stats: Total Checked: 4,275 | Duration: 4 ms | Rate: 1,068,750 attempts/sec
+[2026-01-02 21:26:18] Thread-5 Created. Assigned Range: 75-94. Status: STARTED.
+[2026-01-02 21:26:18] Thread Stop Signal Sent. Stopping 6 active threads.
+[2026-01-02 21:26:27] ---------------------------------------------------------------
+[2026-01-02 21:26:27] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 7
+[2026-01-02 21:26:27] Thread-0 Created. Assigned Range: 0-12. Status: STARTED.
+[2026-01-02 21:26:27] Thread-1 Created. Assigned Range: 13-25. Status: STARTED.
+[2026-01-02 21:26:27] Thread-2 Created. Assigned Range: 26-38. Status: STARTED.
+[2026-01-02 21:26:27] Thread-3 Created. Assigned Range: 39-51. Status: STARTED.
+[2026-01-02 21:26:27] Thread-4 Created. Assigned Range: 52-64. Status: STARTED.
+[2026-01-02 21:26:27] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 4, Time: 0ms
+[2026-01-02 21:26:27] Thread-5 Created. Assigned Range: 65-77. Status: STARTED.
+[2026-01-02 21:26:27] >>> Search Stats: Total Checked: 4,940 | Duration: 5 ms | Rate: 988,000 attempts/sec
+[2026-01-02 21:26:27] Thread Stop Signal Sent. Stopping 7 active threads.
+[2026-01-02 21:26:27] Thread-6 Created. Assigned Range: 78-94. Status: STARTED.
+[2026-01-02 21:26:35] ---------------------------------------------------------------
+[2026-01-02 21:26:35] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-02 21:26:35] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-02 21:26:35] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-02 21:26:35] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-02 21:26:35] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-02 21:26:35] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-02 21:26:35] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-02 21:26:35] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-02 21:26:35] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 4, Time: 0ms
+[2026-01-02 21:26:35] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-02 21:26:35] >>> Search Stats: Total Checked: 3,135 | Duration: 2 ms | Rate: 1,567,500 attempts/sec
+[2026-01-02 21:26:35] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 21:26:52] ---------------------------------------------------------------
+[2026-01-02 21:26:52] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 9
+[2026-01-02 21:26:52] Thread-0 Created. Assigned Range: 0-9. Status: STARTED.
+[2026-01-02 21:26:52] Thread-1 Created. Assigned Range: 10-19. Status: STARTED.
+[2026-01-02 21:26:52] Thread-2 Created. Assigned Range: 20-29. Status: STARTED.
+[2026-01-02 21:26:52] Thread-3 Created. Assigned Range: 30-39. Status: STARTED.
+[2026-01-02 21:26:52] Thread-4 Created. Assigned Range: 40-49. Status: STARTED.
+[2026-01-02 21:26:52] Thread-5 Created. Assigned Range: 50-59. Status: STARTED.
+[2026-01-02 21:26:52] Thread-6 Created. Assigned Range: 60-69. Status: STARTED.
+[2026-01-02 21:26:52] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 5, Time: 0ms
+[2026-01-02 21:26:52] Thread-7 Created. Assigned Range: 70-79. Status: STARTED.
+[2026-01-02 21:26:52] >>> Search Stats: Total Checked: 4,750 | Duration: 3 ms | Rate: 1,583,333 attempts/sec
+[2026-01-02 21:26:52] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 21:26:52] Thread-8 Created. Assigned Range: 80-94. Status: STARTED.
+[2026-01-02 21:27:00] ---------------------------------------------------------------
+[2026-01-02 21:27:00] Request Received. Starting new search. Length: 2 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-02 21:27:00] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-02 21:27:00] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-02 21:27:00] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-02 21:27:00] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-02 21:27:00] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-02 21:27:00] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-02 21:27:00] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-02 21:27:00] >>> SUCCESS: Password found! Result details: Password: Uj, ThreadID: 5, Time: 0ms
+[2026-01-02 21:27:00] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-02 21:27:00] >>> Search Stats: Total Checked: 4,275 | Duration: 4 ms | Rate: 1,068,750 attempts/sec
+[2026-01-02 21:27:00] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-02 21:27:00] Thread Stop Signal Sent. Stopping 9 active threads.
+[2026-01-02 21:27:00] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-02 21:27:22] ---------------------------------------------------------------
+[2026-01-02 21:27:22] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 1
+[2026-01-02 21:27:22] Thread-0 Created. Assigned Range: 0-94. Status: STARTED.
+[2026-01-02 21:27:22] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 9ms
+[2026-01-02 21:27:22] >>> Search Stats: Total Checked: 0 | Duration: 10 ms | Rate: 0 attempts/sec
+[2026-01-02 21:27:22] Thread Stop Signal Sent. Stopping 1 active threads.
+[2026-01-02 21:27:31] ---------------------------------------------------------------
+[2026-01-02 21:27:31] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 2
+[2026-01-02 21:27:31] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2026-01-02 21:27:31] Thread-1 Created. Assigned Range: 47-94. Status: STARTED.
+[2026-01-02 21:27:31] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 7ms
+[2026-01-02 21:27:31] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2026-01-02 21:27:31] Thread Stop Signal Sent. Stopping 2 active threads.
+[2026-01-02 21:27:39] ---------------------------------------------------------------
+[2026-01-02 21:27:39] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-02 21:27:39] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-02 21:27:39] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-02 21:27:39] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-02 21:27:39] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 7ms
+[2026-01-02 21:27:39] >>> Search Stats: Total Checked: 0 | Duration: 7 ms | Rate: 0 attempts/sec
+[2026-01-02 21:27:39] Thread Stop Signal Sent. Stopping 3 active threads.
+[2026-01-02 21:27:47] ---------------------------------------------------------------
+[2026-01-02 21:27:47] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 4
+[2026-01-02 21:27:47] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2026-01-02 21:27:47] Thread-1 Created. Assigned Range: 23-45. Status: STARTED.
+[2026-01-02 21:27:47] Thread-2 Created. Assigned Range: 46-68. Status: STARTED.
+[2026-01-02 21:27:47] Thread-3 Created. Assigned Range: 69-94. Status: STARTED.
+[2026-01-02 21:27:47] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 8ms
+[2026-01-02 21:27:47] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2026-01-02 21:27:47] Thread Stop Signal Sent. Stopping 4 active threads.
+[2026-01-02 21:27:55] ---------------------------------------------------------------
+[2026-01-02 21:27:55] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 5
+[2026-01-02 21:27:55] Thread-0 Created. Assigned Range: 0-18. Status: STARTED.
+[2026-01-02 21:27:55] Thread-1 Created. Assigned Range: 19-37. Status: STARTED.
+[2026-01-02 21:27:55] Thread-2 Created. Assigned Range: 38-56. Status: STARTED.
+[2026-01-02 21:27:55] Thread-3 Created. Assigned Range: 57-75. Status: STARTED.
+[2026-01-02 21:27:55] Thread-4 Created. Assigned Range: 76-94. Status: STARTED.
+[2026-01-02 21:27:55] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 7ms
+[2026-01-02 21:27:55] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2026-01-02 21:27:55] Thread Stop Signal Sent. Stopping 5 active threads.
+[2026-01-02 21:28:03] ---------------------------------------------------------------
+[2026-01-02 21:28:03] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 6
+[2026-01-02 21:28:03] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2026-01-02 21:28:03] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2026-01-02 21:28:03] Thread-2 Created. Assigned Range: 30-44. Status: STARTED.
+[2026-01-02 21:28:03] Thread-3 Created. Assigned Range: 45-59. Status: STARTED.
+[2026-01-02 21:28:03] Thread-4 Created. Assigned Range: 60-74. Status: STARTED.
+[2026-01-02 21:28:03] Thread-5 Created. Assigned Range: 75-94. Status: STARTED.
+[2026-01-02 21:28:03] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 8ms
+[2026-01-02 21:28:03] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2026-01-02 21:28:03] Thread Stop Signal Sent. Stopping 6 active threads.
+[2026-01-02 21:28:11] ---------------------------------------------------------------
+[2026-01-02 21:28:11] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 7
+[2026-01-02 21:28:11] Thread-0 Created. Assigned Range: 0-12. Status: STARTED.
+[2026-01-02 21:28:11] Thread-1 Created. Assigned Range: 13-25. Status: STARTED.
+[2026-01-02 21:28:11] Thread-2 Created. Assigned Range: 26-38. Status: STARTED.
+[2026-01-02 21:28:11] Thread-3 Created. Assigned Range: 39-51. Status: STARTED.
+[2026-01-02 21:28:11] Thread-4 Created. Assigned Range: 52-64. Status: STARTED.
+[2026-01-02 21:28:11] Thread-5 Created. Assigned Range: 65-77. Status: STARTED.
+[2026-01-02 21:28:11] Thread-6 Created. Assigned Range: 78-94. Status: STARTED.
+[2026-01-02 21:28:11] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 7ms
+[2026-01-02 21:28:11] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2026-01-02 21:28:11] Thread Stop Signal Sent. Stopping 7 active threads.
+[2026-01-02 21:28:18] ---------------------------------------------------------------
+[2026-01-02 21:28:18] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-02 21:28:18] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-02 21:28:18] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-02 21:28:18] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-02 21:28:18] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-02 21:28:18] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-02 21:28:18] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-02 21:28:18] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-02 21:28:18] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-02 21:28:18] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 8ms
+[2026-01-02 21:28:18] >>> Search Stats: Total Checked: 0 | Duration: 8 ms | Rate: 0 attempts/sec
+[2026-01-02 21:28:18] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 21:28:25] ---------------------------------------------------------------
+[2026-01-02 21:28:25] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 9
+[2026-01-02 21:28:25] Thread-0 Created. Assigned Range: 0-9. Status: STARTED.
+[2026-01-02 21:28:25] Thread-1 Created. Assigned Range: 10-19. Status: STARTED.
+[2026-01-02 21:28:25] Thread-2 Created. Assigned Range: 20-29. Status: STARTED.
+[2026-01-02 21:28:25] Thread-3 Created. Assigned Range: 30-39. Status: STARTED.
+[2026-01-02 21:28:25] Thread-4 Created. Assigned Range: 40-49. Status: STARTED.
+[2026-01-02 21:28:25] Thread-5 Created. Assigned Range: 50-59. Status: STARTED.
+[2026-01-02 21:28:25] Thread-6 Created. Assigned Range: 60-69. Status: STARTED.
+[2026-01-02 21:28:25] Thread-7 Created. Assigned Range: 70-79. Status: STARTED.
+[2026-01-02 21:28:25] Thread-8 Created. Assigned Range: 80-94. Status: STARTED.
+[2026-01-02 21:28:25] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 6ms
+[2026-01-02 21:28:25] >>> Search Stats: Total Checked: 0 | Duration: 7 ms | Rate: 0 attempts/sec
+[2026-01-02 21:28:25] Thread Stop Signal Sent. Stopping 9 active threads.
+[2026-01-02 21:28:32] ---------------------------------------------------------------
+[2026-01-02 21:28:32] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-02 21:28:32] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-02 21:28:32] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-02 21:28:32] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-02 21:28:32] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-02 21:28:32] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-02 21:28:32] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-02 21:28:32] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-02 21:28:32] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-02 21:28:32] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-02 21:28:32] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-02 21:28:32] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 21ms
+[2026-01-02 21:28:32] >>> Search Stats: Total Checked: 0 | Duration: 22 ms | Rate: 0 attempts/sec
+[2026-01-02 21:28:32] Thread Stop Signal Sent. Stopping 10 active threads.
+[2026-01-02 21:28:51] ---------------------------------------------------------------
+[2026-01-02 21:28:51] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 1
+[2026-01-02 21:28:51] Thread-0 Created. Assigned Range: 0-94. Status: STARTED.
+[2026-01-02 21:29:00] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 0, Time: 8566ms
+[2026-01-02 21:29:00] >>> Search Stats: Total Checked: 67,000,000 | Duration: 8568 ms | Rate: 7,819,794 attempts/sec
+[2026-01-02 21:29:00] Thread Stop Signal Sent. Stopping 1 active threads.
+[2026-01-02 21:29:08] ---------------------------------------------------------------
+[2026-01-02 21:29:08] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 2
+[2026-01-02 21:29:08] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2026-01-02 21:29:08] Thread-1 Created. Assigned Range: 47-94. Status: STARTED.
+[2026-01-02 21:29:12] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 1, Time: 3496ms
+[2026-01-02 21:29:12] >>> Search Stats: Total Checked: 53,000,000 | Duration: 3499 ms | Rate: 15,147,184 attempts/sec
+[2026-01-02 21:29:12] Thread Stop Signal Sent. Stopping 2 active threads.
+[2026-01-02 21:29:20] ---------------------------------------------------------------
+[2026-01-02 21:29:20] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-02 21:29:20] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-02 21:29:20] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-02 21:29:20] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-02 21:29:22] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 2, Time: 1811ms
+[2026-01-02 21:29:22] >>> Search Stats: Total Checked: 40,000,000 | Duration: 1815 ms | Rate: 22,038,567 attempts/sec
+[2026-01-02 21:29:22] Thread Stop Signal Sent. Stopping 3 active threads.
+[2026-01-02 21:29:28] ---------------------------------------------------------------
+[2026-01-02 21:29:28] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 4
+[2026-01-02 21:29:28] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2026-01-02 21:29:28] Thread-1 Created. Assigned Range: 23-45. Status: STARTED.
+[2026-01-02 21:29:28] Thread-2 Created. Assigned Range: 46-68. Status: STARTED.
+[2026-01-02 21:29:28] Thread-3 Created. Assigned Range: 69-94. Status: STARTED.
+[2026-01-02 21:29:29] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 3, Time: 1186ms
+[2026-01-02 21:29:29] >>> Search Stats: Total Checked: 32,000,000 | Duration: 1187 ms | Rate: 26,958,719 attempts/sec
+[2026-01-02 21:29:29] Thread Stop Signal Sent. Stopping 4 active threads.
+[2026-01-02 21:29:35] ---------------------------------------------------------------
+[2026-01-02 21:29:35] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 5
+[2026-01-02 21:29:35] Thread-0 Created. Assigned Range: 0-18. Status: STARTED.
+[2026-01-02 21:29:35] Thread-1 Created. Assigned Range: 19-37. Status: STARTED.
+[2026-01-02 21:29:35] Thread-2 Created. Assigned Range: 38-56. Status: STARTED.
+[2026-01-02 21:29:35] Thread-3 Created. Assigned Range: 57-75. Status: STARTED.
+[2026-01-02 21:29:35] Thread-4 Created. Assigned Range: 76-94. Status: STARTED.
+[2026-01-02 21:29:35] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 4, Time: 330ms
+[2026-01-02 21:29:35] >>> Search Stats: Total Checked: 10,000,000 | Duration: 333 ms | Rate: 30,030,030 attempts/sec
+[2026-01-02 21:29:35] Thread Stop Signal Sent. Stopping 5 active threads.
+[2026-01-02 21:30:32] ---------------------------------------------------------------
+[2026-01-02 21:30:32] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 6
+[2026-01-02 21:30:32] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2026-01-02 21:30:32] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2026-01-02 21:30:32] Thread-2 Created. Assigned Range: 30-44. Status: STARTED.
+[2026-01-02 21:30:32] Thread-3 Created. Assigned Range: 45-59. Status: STARTED.
+[2026-01-02 21:30:32] Thread-4 Created. Assigned Range: 60-74. Status: STARTED.
+[2026-01-02 21:30:32] Thread-5 Created. Assigned Range: 75-94. Status: STARTED.
+[2026-01-02 21:30:33] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 5, Time: 372ms
+[2026-01-02 21:30:33] >>> Search Stats: Total Checked: 18,000,000 | Duration: 375 ms | Rate: 48,000,000 attempts/sec
+[2026-01-02 21:30:33] Thread Stop Signal Sent. Stopping 6 active threads.
+[2026-01-02 21:30:53] ---------------------------------------------------------------
+[2026-01-02 21:30:53] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 7
+[2026-01-02 21:30:53] Thread-0 Created. Assigned Range: 0-12. Status: STARTED.
+[2026-01-02 21:30:53] Thread-1 Created. Assigned Range: 13-25. Status: STARTED.
+[2026-01-02 21:30:53] Thread-2 Created. Assigned Range: 26-38. Status: STARTED.
+[2026-01-02 21:30:53] Thread-3 Created. Assigned Range: 39-51. Status: STARTED.
+[2026-01-02 21:30:53] Thread-4 Created. Assigned Range: 52-64. Status: STARTED.
+[2026-01-02 21:30:53] Thread-5 Created. Assigned Range: 65-77. Status: STARTED.
+[2026-01-02 21:30:53] Thread-6 Created. Assigned Range: 78-94. Status: STARTED.
+[2026-01-02 21:30:53] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 6, Time: 68ms
+[2026-01-02 21:30:53] >>> Search Stats: Total Checked: 0 | Duration: 71 ms | Rate: 0 attempts/sec
+[2026-01-02 21:30:53] Thread Stop Signal Sent. Stopping 7 active threads.
+[2026-01-02 21:31:47] ---------------------------------------------------------------
+[2026-01-02 21:31:47] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-02 21:31:47] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-02 21:31:47] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-02 21:31:47] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-02 21:31:47] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-02 21:31:47] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-02 21:31:47] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-02 21:31:47] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-02 21:31:47] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-02 21:31:47] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 7, Time: 160ms
+[2026-01-02 21:31:47] >>> Search Stats: Total Checked: 8,000,000 | Duration: 163 ms | Rate: 49,079,754 attempts/sec
+[2026-01-02 21:31:47] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 21:33:01] ---------------------------------------------------------------
+[2026-01-02 21:33:01] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 9
+[2026-01-02 21:33:01] Thread-0 Created. Assigned Range: 0-9. Status: STARTED.
+[2026-01-02 21:33:01] Thread-1 Created. Assigned Range: 10-19. Status: STARTED.
+[2026-01-02 21:33:01] Thread-2 Created. Assigned Range: 20-29. Status: STARTED.
+[2026-01-02 21:33:01] Thread-3 Created. Assigned Range: 30-39. Status: STARTED.
+[2026-01-02 21:33:01] Thread-4 Created. Assigned Range: 40-49. Status: STARTED.
+[2026-01-02 21:33:01] Thread-5 Created. Assigned Range: 50-59. Status: STARTED.
+[2026-01-02 21:33:01] Thread-6 Created. Assigned Range: 60-69. Status: STARTED.
+[2026-01-02 21:33:01] Thread-7 Created. Assigned Range: 70-79. Status: STARTED.
+[2026-01-02 21:33:01] Thread-8 Created. Assigned Range: 80-94. Status: STARTED.
+[2026-01-02 21:33:02] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 7, Time: 965ms
+[2026-01-02 21:33:02] >>> Search Stats: Total Checked: 60,000,000 | Duration: 969 ms | Rate: 61,919,504 attempts/sec
+[2026-01-02 21:33:02] Thread Stop Signal Sent. Stopping 9 active threads.
+[2026-01-02 21:34:58] ---------------------------------------------------------------
+[2026-01-02 21:34:58] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 9
+[2026-01-02 21:34:58] Thread-0 Created. Assigned Range: 0-9. Status: STARTED.
+[2026-01-02 21:34:58] Thread-1 Created. Assigned Range: 10-19. Status: STARTED.
+[2026-01-02 21:34:58] Thread-2 Created. Assigned Range: 20-29. Status: STARTED.
+[2026-01-02 21:34:58] Thread-3 Created. Assigned Range: 30-39. Status: STARTED.
+[2026-01-02 21:34:58] Thread-4 Created. Assigned Range: 40-49. Status: STARTED.
+[2026-01-02 21:34:58] Thread-5 Created. Assigned Range: 50-59. Status: STARTED.
+[2026-01-02 21:34:58] Thread-6 Created. Assigned Range: 60-69. Status: STARTED.
+[2026-01-02 21:34:58] Thread-7 Created. Assigned Range: 70-79. Status: STARTED.
+[2026-01-02 21:34:58] Thread-8 Created. Assigned Range: 80-94. Status: STARTED.
+[2026-01-02 21:34:59] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 7, Time: 913ms
+[2026-01-02 21:34:59] >>> Search Stats: Total Checked: 59,000,000 | Duration: 917 ms | Rate: 64,340,239 attempts/sec
+[2026-01-02 21:34:59] Thread Stop Signal Sent. Stopping 9 active threads.
+[2026-01-02 21:35:15] ---------------------------------------------------------------
+[2026-01-02 21:35:15] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-02 21:35:15] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-02 21:35:15] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-02 21:35:15] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-02 21:35:15] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-02 21:35:15] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-02 21:35:15] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-02 21:35:15] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-02 21:35:15] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-02 21:35:15] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-02 21:35:15] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-02 21:35:16] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 8, Time: 744ms
+[2026-01-02 21:35:16] >>> Search Stats: Total Checked: 47,000,000 | Duration: 749 ms | Rate: 62,750,333 attempts/sec
+[2026-01-02 21:35:16] Thread Stop Signal Sent. Stopping 10 active threads.
+[2026-01-02 21:38:14] ---------------------------------------------------------------
+[2026-01-02 21:38:14] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 1
+[2026-01-02 21:38:14] Thread-0 Created. Assigned Range: 0-94. Status: STARTED.
+[2026-01-02 21:48:40] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 0, Time: 626279ms
+[2026-01-02 21:48:40] >>> Search Stats: Total Checked: 4,737,000,000 | Duration: 626280 ms | Rate: 7,563,709 attempts/sec
+[2026-01-02 21:48:40] Thread Stop Signal Sent. Stopping 1 active threads.
+[2026-01-02 21:50:52] ---------------------------------------------------------------
+[2026-01-02 21:50:52] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 2
+[2026-01-02 21:50:52] Thread-0 Created. Assigned Range: 0-46. Status: STARTED.
+[2026-01-02 21:50:52] Thread-1 Created. Assigned Range: 47-94. Status: STARTED.
+[2026-01-02 21:53:01] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 1, Time: 129327ms
+[2026-01-02 21:53:01] >>> Search Stats: Total Checked: 1,643,000,000 | Duration: 129329 ms | Rate: 12,704,033 attempts/sec
+[2026-01-02 21:53:01] Thread Stop Signal Sent. Stopping 2 active threads.
+[2026-01-02 21:55:06] ---------------------------------------------------------------
+[2026-01-02 21:55:06] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-02 21:55:06] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-02 21:55:06] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-02 21:55:06] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-02 21:59:28] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 1, Time: 262484ms
+[2026-01-02 21:59:28] >>> Search Stats: Total Checked: 6,648,000,000 | Duration: 262485 ms | Rate: 25,327,161 attempts/sec
+[2026-01-02 21:59:28] Thread Stop Signal Sent. Stopping 3 active threads.
+[2026-01-02 22:11:02] ---------------------------------------------------------------
+[2026-01-02 22:11:02] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 4
+[2026-01-02 22:11:02] Thread-0 Created. Assigned Range: 0-22. Status: STARTED.
+[2026-01-02 22:11:02] Thread-1 Created. Assigned Range: 23-45. Status: STARTED.
+[2026-01-02 22:11:02] Thread-2 Created. Assigned Range: 46-68. Status: STARTED.
+[2026-01-02 22:11:02] Thread-3 Created. Assigned Range: 69-94. Status: STARTED.
+[2026-01-02 22:12:49] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 2, Time: 107317ms
+[2026-01-02 22:12:49] >>> Search Stats: Total Checked: 3,952,000,000 | Duration: 107319 ms | Rate: 36,824,793 attempts/sec
+[2026-01-02 22:12:49] Thread Stop Signal Sent. Stopping 4 active threads.
+[2026-01-02 22:14:01] ---------------------------------------------------------------
+[2026-01-02 22:14:01] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 5
+[2026-01-02 22:14:01] Thread-0 Created. Assigned Range: 0-18. Status: STARTED.
+[2026-01-02 22:14:01] Thread-1 Created. Assigned Range: 19-37. Status: STARTED.
+[2026-01-02 22:14:01] Thread-2 Created. Assigned Range: 38-56. Status: STARTED.
+[2026-01-02 22:14:01] Thread-3 Created. Assigned Range: 57-75. Status: STARTED.
+[2026-01-02 22:14:01] Thread-4 Created. Assigned Range: 76-94. Status: STARTED.
+[2026-01-02 22:14:12] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 3, Time: 10713ms
+[2026-01-02 22:14:12] >>> Search Stats: Total Checked: 434,000,000 | Duration: 10714 ms | Rate: 40,507,746 attempts/sec
+[2026-01-02 22:14:12] Thread Stop Signal Sent. Stopping 5 active threads.
+[2026-01-02 22:24:22] ---------------------------------------------------------------
+[2026-01-02 22:24:22] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 6
+[2026-01-02 22:24:22] Thread-0 Created. Assigned Range: 0-14. Status: STARTED.
+[2026-01-02 22:24:22] Thread-1 Created. Assigned Range: 15-29. Status: STARTED.
+[2026-01-02 22:24:22] Thread-2 Created. Assigned Range: 30-44. Status: STARTED.
+[2026-01-02 22:24:22] Thread-3 Created. Assigned Range: 45-59. Status: STARTED.
+[2026-01-02 22:24:22] Thread-4 Created. Assigned Range: 60-74. Status: STARTED.
+[2026-01-02 22:24:22] Thread-5 Created. Assigned Range: 75-94. Status: STARTED.
+[2026-01-02 22:26:20] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 3, Time: 118007ms
+[2026-01-02 22:26:20] >>> Search Stats: Total Checked: 5,931,000,000 | Duration: 118010 ms | Rate: 50,258,452 attempts/sec
+[2026-01-02 22:26:20] Thread Stop Signal Sent. Stopping 6 active threads.
+[2026-01-02 22:27:52] ---------------------------------------------------------------
+[2026-01-02 22:27:52] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 7
+[2026-01-02 22:27:52] Thread-0 Created. Assigned Range: 0-12. Status: STARTED.
+[2026-01-02 22:27:52] Thread-1 Created. Assigned Range: 13-25. Status: STARTED.
+[2026-01-02 22:27:52] Thread-2 Created. Assigned Range: 26-38. Status: STARTED.
+[2026-01-02 22:27:52] Thread-3 Created. Assigned Range: 39-51. Status: STARTED.
+[2026-01-02 22:27:52] Thread-4 Created. Assigned Range: 52-64. Status: STARTED.
+[2026-01-02 22:27:52] Thread-5 Created. Assigned Range: 65-77. Status: STARTED.
+[2026-01-02 22:27:52] Thread-6 Created. Assigned Range: 78-94. Status: STARTED.
+[2026-01-02 22:28:54] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 4, Time: 61916ms
+[2026-01-02 22:28:54] >>> Search Stats: Total Checked: 3,287,000,000 | Duration: 61918 ms | Rate: 53,086,339 attempts/sec
+[2026-01-02 22:28:54] Thread Stop Signal Sent. Stopping 7 active threads.
+[2026-01-02 22:31:24] ---------------------------------------------------------------
+[2026-01-02 22:31:24] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-02 22:31:24] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-02 22:31:24] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-02 22:31:24] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-02 22:31:24] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-02 22:31:24] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-02 22:31:24] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-02 22:31:24] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-02 22:31:24] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-02 22:32:02] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 5, Time: 38268ms
+[2026-01-02 22:32:02] >>> Search Stats: Total Checked: 1,987,000,000 | Duration: 38273 ms | Rate: 51,916,494 attempts/sec
+[2026-01-02 22:32:02] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 22:34:46] ---------------------------------------------------------------
+[2026-01-02 22:34:46] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 9
+[2026-01-02 22:34:46] Thread-0 Created. Assigned Range: 0-9. Status: STARTED.
+[2026-01-02 22:34:46] Thread-1 Created. Assigned Range: 10-19. Status: STARTED.
+[2026-01-02 22:34:46] Thread-2 Created. Assigned Range: 20-29. Status: STARTED.
+[2026-01-02 22:34:46] Thread-3 Created. Assigned Range: 30-39. Status: STARTED.
+[2026-01-02 22:34:46] Thread-4 Created. Assigned Range: 40-49. Status: STARTED.
+[2026-01-02 22:34:46] Thread-5 Created. Assigned Range: 50-59. Status: STARTED.
+[2026-01-02 22:34:46] Thread-6 Created. Assigned Range: 60-69. Status: STARTED.
+[2026-01-02 22:34:46] Thread-7 Created. Assigned Range: 70-79. Status: STARTED.
+[2026-01-02 22:34:46] Thread-8 Created. Assigned Range: 80-94. Status: STARTED.
+[2026-01-02 22:36:10] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 5, Time: 84576ms
+[2026-01-02 22:36:10] >>> Search Stats: Total Checked: 5,671,000,000 | Duration: 84580 ms | Rate: 67,048,947 attempts/sec
+[2026-01-02 22:36:10] Thread Stop Signal Sent. Stopping 9 active threads.
+[2026-01-02 22:43:22] ---------------------------------------------------------------
+[2026-01-02 22:43:22] Request Received. Starting new search. Length: 5 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-02 22:43:22] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-02 22:43:22] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-02 22:43:22] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-02 22:43:22] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-02 22:43:22] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-02 22:43:22] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-02 22:43:22] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-02 22:43:22] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-02 22:43:22] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-02 22:43:22] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-02 22:44:14] >>> SUCCESS: Password found! Result details: Password: Z/02Y, ThreadID: 6, Time: 51684ms
+[2026-01-02 22:44:14] >>> Search Stats: Total Checked: 3,231,000,000 | Duration: 51688 ms | Rate: 62,509,673 attempts/sec
+[2026-01-02 22:44:14] Thread Stop Signal Sent. Stopping 10 active threads.
+[2026-01-02 22:52:39] ---------------------------------------------------------------
+[2026-01-02 22:52:39] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 8
+[2026-01-02 22:52:39] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2026-01-02 22:52:39] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2026-01-02 22:52:39] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2026-01-02 22:52:39] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2026-01-02 22:52:39] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2026-01-02 22:52:39] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2026-01-02 22:52:39] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2026-01-02 22:52:39] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2026-01-02 23:40:47] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 5, Time: 2888118ms
+[2026-01-02 23:40:47] >>> Search Stats: Total Checked: 152,012,000,000 | Duration: 2888120 ms | Rate: 52,633,547 attempts/sec
+[2026-01-02 23:40:47] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-02 23:53:41] ---------------------------------------------------------------
+[2026-01-02 23:53:41] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-02 23:53:41] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-02 23:53:41] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-02 23:53:41] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-03 00:19:01] ---------------------------------------------------------------
+[2026-01-03 00:19:01] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-03 00:19:01] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-03 00:19:01] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-03 00:19:01] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-03 02:15:54] ---------------------------------------------------------------
+[2026-01-03 02:15:54] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 3
+[2026-01-03 02:15:54] Thread-0 Created. Assigned Range: 0-30. Status: STARTED.
+[2026-01-03 02:15:54] Thread-1 Created. Assigned Range: 31-61. Status: STARTED.
+[2026-01-03 02:15:54] Thread-2 Created. Assigned Range: 62-94. Status: STARTED.
+[2026-01-03 08:11:08] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 0, Time: 28326647ms
+[2026-01-03 08:11:08] >>> Search Stats: Total Checked: 1,334,092,000,000 | Duration: 21314281 ms | Rate: 62,591,461 attempts/sec
+[2026-01-03 08:11:08] Thread Stop Signal Sent. Stopping 3 active threads.
+[2026-01-03 09:26:31] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 0, Time: 34369510ms
+[2026-01-03 09:26:31] >>> Search Stats: Total Checked: 1,510,852,586,978 | Duration: 25837070 ms | Rate: 58,476,157 attempts/sec
+[2026-01-03 09:26:31] Thread Stop Signal Sent. Stopping 3 active threads.
+[2026-01-03 11:08:39] ---------------------------------------------------------------
+[2026-01-03 11:08:39] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-03 11:08:39] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-03 11:08:39] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-03 11:08:39] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-03 11:08:39] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-03 11:08:39] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-03 11:08:39] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-03 11:08:39] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-03 11:08:39] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-03 12:12:34] ---------------------------------------------------------------
+[2026-01-03 12:12:34] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-03 12:12:34] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-03 12:12:34] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-03 12:12:34] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-03 12:12:34] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-03 12:12:34] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-03 12:12:34] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-03 12:12:34] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-03 12:12:34] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-03 12:12:34] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-03 12:12:34] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-03 12:13:32] ---------------------------------------------------------------
+[2026-01-03 12:13:32] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 10
+[2026-01-03 12:13:32] Thread-0 Created. Assigned Range: 0-3. Status: STARTED.
+[2026-01-03 12:13:32] Thread-1 Created. Assigned Range: 4-7. Status: STARTED.
+[2026-01-03 12:13:32] Thread-2 Created. Assigned Range: 8-11. Status: STARTED.
+[2026-01-03 12:13:32] Thread-3 Created. Assigned Range: 12-15. Status: STARTED.
+[2026-01-03 12:13:32] Thread-4 Created. Assigned Range: 16-19. Status: STARTED.
+[2026-01-03 12:13:32] Thread-5 Created. Assigned Range: 20-23. Status: STARTED.
+[2026-01-03 12:13:32] Thread-6 Created. Assigned Range: 24-27. Status: STARTED.
+[2026-01-03 12:13:32] Thread-7 Created. Assigned Range: 28-31. Status: STARTED.
+[2026-01-03 12:13:32] Thread-8 Created. Assigned Range: 32-35. Status: STARTED.
+[2026-01-03 12:13:32] Thread-9 Created. Assigned Range: 36-46. Status: STARTED.
+[2026-01-03 12:15:52] ---------------------------------------------------------------
+[2026-01-03 12:15:52] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-03 12:15:52] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-03 12:15:52] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-03 12:15:52] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-03 12:15:52] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-03 12:15:52] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-03 12:15:52] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-03 12:15:52] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-03 12:15:52] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-03 12:15:52] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-03 12:15:52] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-03 12:15:55] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 8, Time: 2438ms
+[2026-01-03 12:15:55] >>> Search Stats: Total Checked: 184,000,000 | Duration: 2511 ms | Rate: 73,277,578 attempts/sec
+[2026-01-03 12:15:55] Thread Stop Signal Sent. Stopping 10 active threads.
+===============================================================
+[2026-01-03 12:16:33] SERVER STARTUP: Server [server_1] is ready.
+===============================================================
+[2026-01-03 12:16:49] ---------------------------------------------------------------
+[2026-01-03 12:16:49] Request Received. Starting new search. Length: 4 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-03 12:16:49] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-03 12:16:49] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-03 12:16:49] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-03 12:16:49] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-03 12:16:49] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-03 12:16:49] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-03 12:16:49] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-03 12:16:49] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-03 12:16:49] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-03 12:16:49] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-03 12:16:50] >>> SUCCESS: Password found! Result details: Password: n_$), ThreadID: 8, Time: 951ms
+[2026-01-03 12:16:50] >>> Search Stats: Total Checked: 51,000,000 | Duration: 955 ms | Rate: 53,403,141 attempts/sec
+[2026-01-03 12:16:50] Thread Stop Signal Sent. Stopping 10 active threads.
+[2026-01-03 12:17:13] ---------------------------------------------------------------
+[2026-01-03 12:17:13] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 10
+[2026-01-03 12:17:13] Thread-0 Created. Assigned Range: 0-8. Status: STARTED.
+[2026-01-03 12:17:13] Thread-1 Created. Assigned Range: 9-17. Status: STARTED.
+[2026-01-03 12:17:13] Thread-2 Created. Assigned Range: 18-26. Status: STARTED.
+[2026-01-03 12:17:13] Thread-3 Created. Assigned Range: 27-35. Status: STARTED.
+[2026-01-03 12:17:13] Thread-4 Created. Assigned Range: 36-44. Status: STARTED.
+[2026-01-03 12:17:13] Thread-5 Created. Assigned Range: 45-53. Status: STARTED.
+[2026-01-03 12:17:13] Thread-6 Created. Assigned Range: 54-62. Status: STARTED.
+[2026-01-03 12:17:13] Thread-7 Created. Assigned Range: 63-71. Status: STARTED.
+[2026-01-03 12:17:13] Thread-8 Created. Assigned Range: 72-80. Status: STARTED.
+[2026-01-03 12:17:13] Thread-9 Created. Assigned Range: 81-94. Status: STARTED.
+[2026-01-03 12:23:27] ---------------------------------------------------------------
+[2026-01-03 12:23:27] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-03 12:23:27] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-03 12:23:27] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-03 12:23:27] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-03 12:23:27] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-03 12:23:27] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-03 12:23:27] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-03 12:23:27] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-03 12:23:27] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-03 12:31:19] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 3, Time: 846154ms
+[2026-01-03 12:31:19] >>> Search Stats: Total Checked: 35,173,000,000 | Duration: 472658 ms | Rate: 74,415,327 attempts/sec
+[2026-01-03 12:31:19] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-03 13:08:00] ---------------------------------------------------------------
+[2026-01-03 13:08:00] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 7
+[2026-01-03 13:08:00] Thread-0 Created. Assigned Range: 0-12. Status: STARTED.
+[2026-01-03 13:08:00] Thread-1 Created. Assigned Range: 13-25. Status: STARTED.
+[2026-01-03 13:08:00] Thread-2 Created. Assigned Range: 26-38. Status: STARTED.
+[2026-01-03 13:08:00] Thread-3 Created. Assigned Range: 39-51. Status: STARTED.
+[2026-01-03 13:08:00] Thread-4 Created. Assigned Range: 52-64. Status: STARTED.
+[2026-01-03 13:08:00] Thread-5 Created. Assigned Range: 65-77. Status: STARTED.
+[2026-01-03 13:08:00] Thread-6 Created. Assigned Range: 78-94. Status: STARTED.
+[2026-01-03 13:59:24] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 2, Time: 3083941ms
+[2026-01-03 13:59:24] >>> Search Stats: Total Checked: 209,898,000,000 | Duration: 3083945 ms | Rate: 68,061,525 attempts/sec
+[2026-01-03 13:59:24] Thread Stop Signal Sent. Stopping 7 active threads.
+[2026-01-03 14:05:51] ---------------------------------------------------------------
+[2026-01-03 14:05:51] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 7
+[2026-01-03 14:05:51] Thread-0 Created. Assigned Range: 0-5. Status: STARTED.
+[2026-01-03 14:05:51] Thread-1 Created. Assigned Range: 6-11. Status: STARTED.
+[2026-01-03 14:05:51] Thread-2 Created. Assigned Range: 12-17. Status: STARTED.
+[2026-01-03 14:05:51] Thread-3 Created. Assigned Range: 18-23. Status: STARTED.
+[2026-01-03 14:05:51] Thread-4 Created. Assigned Range: 24-29. Status: STARTED.
+[2026-01-03 14:05:51] Thread-5 Created. Assigned Range: 30-35. Status: STARTED.
+[2026-01-03 14:05:51] Thread-6 Created. Assigned Range: 36-46. Status: STARTED.
+[2026-01-03 15:57:16] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 4, Time: 6685663ms
+[2026-01-03 15:57:16] >>> Search Stats: Total Checked: 488,872,000,000 | Duration: 6685671 ms | Rate: 73,122,353 attempts/sec
+[2026-01-03 15:57:16] Thread Stop Signal Sent. Stopping 7 active threads.
+[2026-01-03 16:00:10] ---------------------------------------------------------------
+[2026-01-03 16:00:10] Request Received. Starting new search. Length: 6 | Total Range: 0-94 | Threads to Create: 9
+[2026-01-03 16:00:10] Thread-0 Created. Assigned Range: 0-9. Status: STARTED.
+[2026-01-03 16:00:10] Thread-1 Created. Assigned Range: 10-19. Status: STARTED.
+[2026-01-03 16:00:10] Thread-2 Created. Assigned Range: 20-29. Status: STARTED.
+[2026-01-03 16:00:10] Thread-3 Created. Assigned Range: 30-39. Status: STARTED.
+[2026-01-03 16:00:10] Thread-4 Created. Assigned Range: 40-49. Status: STARTED.
+[2026-01-03 16:00:10] Thread-5 Created. Assigned Range: 50-59. Status: STARTED.
+[2026-01-03 16:00:10] Thread-6 Created. Assigned Range: 60-69. Status: STARTED.
+[2026-01-03 16:00:10] Thread-7 Created. Assigned Range: 70-79. Status: STARTED.
+[2026-01-03 16:00:10] Thread-8 Created. Assigned Range: 80-94. Status: STARTED.
+[2026-01-03 18:11:30] ---------------------------------------------------------------
+[2026-01-03 18:11:30] Request Received. Starting new search. Length: 3 | Total Range: 0-94 | Threads to Create: 8
+[2026-01-03 18:11:30] Thread-0 Created. Assigned Range: 0-10. Status: STARTED.
+[2026-01-03 18:11:30] Thread-1 Created. Assigned Range: 11-21. Status: STARTED.
+[2026-01-03 18:11:30] Thread-2 Created. Assigned Range: 22-32. Status: STARTED.
+[2026-01-03 18:11:30] Thread-3 Created. Assigned Range: 33-43. Status: STARTED.
+[2026-01-03 18:11:30] Thread-4 Created. Assigned Range: 44-54. Status: STARTED.
+[2026-01-03 18:11:30] Thread-5 Created. Assigned Range: 55-65. Status: STARTED.
+[2026-01-03 18:11:30] Thread-6 Created. Assigned Range: 66-76. Status: STARTED.
+[2026-01-03 18:11:30] Thread-7 Created. Assigned Range: 77-94. Status: STARTED.
+[2026-01-03 18:11:30] >>> SUCCESS: Password found! Result details: Password: $is, ThreadID: 0, Time: 6ms
+[2026-01-03 18:11:30] >>> Search Stats: Total Checked: 1,000,000 | Duration: 10 ms | Rate: 100,000,000 attempts/sec
+[2026-01-03 18:11:30] Thread Stop Signal Sent. Stopping 8 active threads.
+[2026-01-03 18:19:43] ---------------------------------------------------------------
+[2026-01-03 18:19:43] Request Received. Starting new search. Length: 6 | Total Range: 0-46 | Threads to Create: 8
+[2026-01-03 18:19:43] Thread-0 Created. Assigned Range: 0-4. Status: STARTED.
+[2026-01-03 18:19:43] Thread-1 Created. Assigned Range: 5-9. Status: STARTED.
+[2026-01-03 18:19:43] Thread-2 Created. Assigned Range: 10-14. Status: STARTED.
+[2026-01-03 18:19:43] Thread-3 Created. Assigned Range: 15-19. Status: STARTED.
+[2026-01-03 18:19:43] Thread-4 Created. Assigned Range: 20-24. Status: STARTED.
+[2026-01-03 18:19:43] Thread-5 Created. Assigned Range: 25-29. Status: STARTED.
+[2026-01-03 18:19:43] Thread-6 Created. Assigned Range: 30-34. Status: STARTED.
+[2026-01-03 18:19:43] Thread-7 Created. Assigned Range: 35-46. Status: STARTED.
+[2026-01-03 18:54:44] >>> SUCCESS: Password found! Result details: Password: ;M{e[6, ThreadID: 2, Time: 10473741ms
+[2026-01-03 18:54:44] >>> Search Stats: Total Checked: 153,177,000,000 | Duration: 2100887 ms | Rate: 72,910,632 attempts/sec
+[2026-01-03 18:54:44] Thread Stop Signal Sent. Stopping 8 active threads.
