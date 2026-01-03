@@ -29,22 +29,6 @@ To accelerate data collection and performance evaluation, this project utilizes 
 ## ⚙️ Testbed Environments
 To expedite the assignment's performance analysis, two identical distributed environments are deployed.
 
-### 🔹 Cluster A (Configuration Set 1)
-| Role | Machine ID | IP Address | Function |
-| :--- | :--- | :--- | :--- |
-| **Client** | Machine 1 | `10.64.116.193` | Coordinator (Runs `SearchClient`) |
-| **Server 1** | Machine 3 | `10.64.116.211` | Worker Node (Runs `SearchServer`) |
-| **Server 2** | Machine 4 | `10.64.119.149` | Worker Node (Runs `SearchServer`) |
-
-### 🔹 Cluster B (Configuration Set 2)
-| Role | Machine ID | IP Address | Function |
-| :--- | :--- | :--- | :--- |
-| **Client** | Machine 2 | `10.64.119.229` | Coordinator (Runs `SearchClient`) |
-| **Server 1** | Machine 5 | `10.64.119.59` | Worker Node (Runs `SearchServer`) |
-| **Server 2** | Machine 6 | `10.64.119.247` | Worker Node (Runs `SearchServer`) |
-
----
-
 ## 🚀 Execution Guide
 
 ### Prerequisites
@@ -53,7 +37,7 @@ To expedite the assignment's performance analysis, two identical distributed env
 * **Important:** Before compiling `SearchClient.java`, you must manually update the `SERVER_1_IP` and `SERVER_2_IP` variables in the code to match the Cluster you are currently testing.
 
 ### Step 0. Compilation
-First, change the ip address of machine 1 and machine 2 in the code SearchClient.java (line 37 & 38) to match the Cluster you are currently testing.
+First, replace the ip address of machine 1 and machine 2 in the code SearchClient.java (line 37 & 38) to match the Cluster you are currently testing. 
 Then, compile all Java files from the source directory on all machines:
 ```bash
 javac *.java
